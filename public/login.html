@@ -1,0 +1,345 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#e6e8ea",
+                    "secondary-fixed": "#d3e4fe",
+                    "primary-fixed": "#e0e0ff",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#f7f9fb",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary-fixed-variant": "#7b2e12",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-tertiary-fixed": "#390c00",
+                    "primary-fixed-dim": "#bdc2ff",
+                    "outline": "#767683",
+                    "surface-tint": "#4c56af",
+                    "surface-dim": "#d8dadc",
+                    "primary": "#000666",
+                    "surface-container-low": "#f2f4f6",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-secondary-container": "#54647a",
+                    "surface": "#f7f9fb",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#5c1800",
+                    "on-surface-variant": "#454652",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "primary-container": "#1a237e",
+                    "secondary-container": "#d0e1fb",
+                    "inverse-surface": "#2d3133",
+                    "on-tertiary-container": "#e17c5a",
+                    "on-primary-fixed-variant": "#343d96",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#505f76",
+                    "on-primary-fixed": "#000767",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#8690ee",
+                    "on-surface": "#191c1e",
+                    "surface-container": "#eceef0",
+                    "outline-variant": "#c6c5d4",
+                    "on-error": "#ffffff",
+                    "background": "#f7f9fb",
+                    "on-background": "#191c1e",
+                    "tertiary": "#380b00",
+                    "inverse-primary": "#bdc2ff",
+                    "tertiary-fixed": "#ffdbd0",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "xl": "80px",
+                    "container-max": "1280px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "lg": "48px",
+                    "md": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": [
+                            "Inter", "sans-serif"
+                    ],
+                    "headline-md": [
+                            "Hanken Grotesk", "sans-serif"
+                    ],
+                    "display-lg": [
+                            "Hanken Grotesk", "sans-serif"
+                    ],
+                    "body-md": [
+                            "Inter", "sans-serif"
+                    ],
+                    "label-lg": [
+                            "Inter", "sans-serif"
+                    ],
+                    "headline-lg": [
+                            "Hanken Grotesk", "sans-serif"
+                    ],
+                    "label-sm": [
+                            "Inter", "sans-serif"
+                    ]
+            },
+            "fontSize": {
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-lg": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+          },
+        }
+      }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- Left Visual Panel -->
+<div class="hidden lg:flex w-1/2 relative bg-surface-container-highest overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] ease-out hover:scale-105" data-alt="Minimalist luxury campaign image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDj-fUsAmlJocRqpijF4JmGPp_hOBuBeiKn8f-VJFXgtz8rA1qyp9czpebDtJcuDn3rNhAaBd4E_CLAo4LEdKtQzyPw6WNHZ6LIgSZH7cFLJ2AVDWXL9cFgjgraBsxwVA1xkirwq-W5kbgSvtY0tTkLpXYYqBUQmgRvb9mAkdp3TScjI54AjHDaWwOjJmgjtTU5OhYDbxDMoc6s2YRKKLLACNglx7VI7JdllFKHzpXTfpMpNMlYEj4t8g')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent mix-blend-multiply"></div>
+<div class="absolute bottom-xl left-xl right-xl z-10 flex flex-col gap-sm">
+<h1 class="font-display-lg text-display-lg text-on-primary">LUXE</h1>
+<p class="font-body-lg text-body-lg text-on-primary/90 max-w-md">Experience effortless sophistication. Curated collections for the modern professional.</p>
+</div>
+</div>
+<!-- Right Form Panel -->
+<div class="w-full lg:w-1/2 flex items-center justify-center p-md sm:p-margin-desktop lg:p-xl bg-surface">
+<main class="w-full max-w-[420px] flex flex-col animate-[fadeIn_0.5s_ease-out]">
+<div class="lg:hidden mb-lg flex justify-center">
+<span class="font-display-lg text-display-lg text-primary tracking-tight">LUXE</span>
+</div>
+<div class="mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Welcome back</h2>
+<p class="font-body-md text-body-md text-secondary">Please enter your details to sign in.</p>
+</div>
+<!-- Error Toast -->
+<div class="hidden mb-md p-sm bg-error-container text-on-error-container font-label-sm text-label-sm rounded flex items-start gap-sm border border-error/20 shadow-sm" id="login-error" role="alert">
+<span class="material-symbols-outlined text-[18px]">error</span>
+<span id="error-message" class="">Invalid credentials provided.</span>
+</div>
+<!-- Form -->
+<form class="flex flex-col gap-md" id="login-form" novalidate="">
+<!-- Email Input -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="email">Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">mail</span>
+<input class="w-full h-lg pl-[40px] pr-sm font-body-md text-body-md bg-surface-container-lowest border border-outline rounded text-on-surface placeholder:text-outline-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors hover:border-primary transition-all duration-300" id="email" name="email" placeholder="name@example.com" required="" type="email">
+</div>
+</div>
+<!-- Password Input -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="password">Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">lock</span>
+<input class="w-full h-lg pl-[40px] pr-[40px] font-body-md text-body-md bg-surface-container-lowest border border-outline rounded text-on-surface placeholder:text-outline-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors hover:border-primary transition-all duration-300" id="password" name="password" placeholder="••••••••" required="" type="password">
+<button aria-label="Toggle password visibility" class="absolute right-sm top-1/2 -translate-y-1/2 text-outline-variant hover:text-on-surface transition-colors focus:outline-none" id="toggle-password" type="button">
+<span class="material-symbols-outlined" id="toggle-icon">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Options Row -->
+<div class="flex items-center justify-between mt-xs mb-sm">
+<label class="flex items-center gap-xs cursor-pointer group">
+<input class="w-4 h-4 rounded-sm border-outline text-primary focus:ring-primary focus:ring-offset-surface bg-surface-container-lowest cursor-pointer" id="remember" name="remember" type="checkbox">
+<span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Remember for 30 days</span>
+</label>
+<a class="font-label-sm text-label-sm text-primary font-semibold hover:text-primary-container transition-colors" href="#">Forgot password?</a>
+</div>
+<!-- Submit Button -->
+<button class="w-full h-lg bg-primary text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-xs hover:bg-primary-container focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface transition-all active:scale-[0.98] hover:scale-[1.01] duration-300" id="submit-btn" type="submit">
+<span class="">Sign in</span>
+<span class="material-symbols-outlined text-[20px] hidden" id="submit-spinner" style="animation: spin 1s linear infinite;">progress_activity</span>
+</button>
+</form>
+<!-- Register Link -->
+<p class="mt-lg text-center font-body-md text-body-md text-secondary">
+                Don't have an account? 
+                <a class="font-label-lg text-label-lg text-primary font-semibold hover:text-primary-container transition-colors ml-xs" href="/register.html">Sign up</a>
+</p>
+</main>
+</div>
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+</style>
+<script src="/js/main.js"></script>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('login-form');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const togglePasswordBtn = document.getElementById('toggle-password');
+            const toggleIcon = document.getElementById('toggle-icon');
+            const submitBtn = document.getElementById('submit-btn');
+            const submitSpinner = document.getElementById('submit-spinner');
+            const errorToast = document.getElementById('login-error');
+            const errorMessage = document.getElementById('error-message');
+
+            togglePasswordBtn.addEventListener('click', () => {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                toggleIcon.textContent = type === 'password' ? 'visibility_off' : 'visibility';
+            });
+
+            [emailInput, passwordInput].forEach(input => {
+                input.addEventListener('input', () => {
+                    hideError();
+                    input.classList.remove('border-error', 'focus:border-error', 'focus:ring-error');
+                });
+            });
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                if (validateForm()) {
+                    setLoadingState(true);
+                    try {
+                        const response = await fetch('/api/auth/login', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                email: emailInput.value,
+                                password: passwordInput.value
+                            })
+                        });
+                        
+                        const data = await response.json();
+                        
+                        if (!response.ok) {
+                            throw new Error(data.message || 'Login failed.');
+                        }
+                        
+                        localStorage.setItem('token', data.token);
+                        localStorage.setItem('user', JSON.stringify(data.user));
+                        
+                        showToast('Sign in successful', 'success');
+                        
+                        submitBtn.querySelector('span').textContent = 'Success';
+                        submitBtn.classList.replace('bg-primary', 'bg-surface-tint');
+                        
+                        setTimeout(() => {
+                            if (data.user.role === 'admin') {
+                                window.location.href = '/admin.html';
+                            } else {
+                                window.location.href = '/index.html';
+                            }
+                        }, 1000);
+                        
+                    } catch (err) {
+                        showError(err.message);
+                    } finally {
+                        setLoadingState(false);
+                    }
+                }
+            });
+
+            function validateForm() {
+                let isValid = true;
+                if (!emailInput.value || !/^\S+@\S+\.\S+$/.test(emailInput.value)) {
+                    emailInput.classList.add('border-error', 'focus:border-error', 'focus:ring-error');
+                    isValid = false;
+                }
+                if (!passwordInput.value || passwordInput.value.length < 6) {
+                    passwordInput.classList.add('border-error', 'focus:border-error', 'focus:ring-error');
+                    isValid = false;
+                }
+                if (!isValid) {
+                    showError('Please provide a valid email and password (min 6 characters).');
+                }
+                return isValid;
+            }
+
+            function showError(msg) {
+                errorMessage.textContent = msg;
+                errorToast.classList.remove('hidden');
+                errorToast.animate([
+                    { transform: 'translateX(0)' },
+                    { transform: 'translateX(-5px)' },
+                    { transform: 'translateX(5px)' },
+                    { transform: 'translateX(0)' }
+                ], { duration: 300, easing: 'ease-in-out' });
+            }
+
+            function hideError() {
+                errorToast.classList.add('hidden');
+            }
+
+            function setLoadingState(isLoading) {
+                const btnText = submitBtn.querySelector('span');
+                if (isLoading) {
+                    submitBtn.disabled = true;
+                    btnText.classList.add('opacity-0');
+                    submitSpinner.classList.remove('hidden');
+                    submitBtn.classList.add('cursor-not-allowed', 'opacity-80');
+                } else {
+                    submitBtn.disabled = false;
+                    btnText.classList.remove('opacity-0');
+                    submitSpinner.classList.add('hidden');
+                    submitBtn.classList.remove('cursor-not-allowed', 'opacity-80');
+                }
+            }
+        });
+    </script>
+</body></html>

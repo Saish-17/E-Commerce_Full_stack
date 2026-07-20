@@ -1,0 +1,476 @@
+<!DOCTYPE html><html lang="en" class="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-fixed": "#d3e4fe",
+                        "primary-fixed": "#e0e0ff",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f7f9fb",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary-fixed-variant": "#7b2e12",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-tertiary-fixed": "#390c00",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "outline": "#767683",
+                        "surface-tint": "#4c56af",
+                        "surface-dim": "#d8dadc",
+                        "primary": "#000666",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-secondary-container": "#54647a",
+                        "surface": "#f7f9fb",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#5c1800",
+                        "on-surface-variant": "#454652",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "primary-container": "#1a237e",
+                        "secondary-container": "#d0e1fb",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-container": "#e17c5a",
+                        "on-primary-fixed-variant": "#343d96",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#505f76",
+                        "on-primary-fixed": "#000767",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#8690ee",
+                        "on-surface": "#191c1e",
+                        "surface-container": "#eceef0",
+                        "outline-variant": "#c6c5d4",
+                        "on-error": "#ffffff",
+                        "background": "#f7f9fb",
+                        "on-background": "#191c1e",
+                        "tertiary": "#380b00",
+                        "inverse-primary": "#bdc2ff",
+                        "tertiary-fixed": "#ffdbd0",
+                        "on-tertiary": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "xl": "80px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "md": "24px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Inter"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                        "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }]
+                    }
+                }
+            }
+        };
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-background text-on-background antialiased min-h-screen flex flex-col">
+<!-- Minimal Header for Transactional Canvas (Suppressing Full TopNavBar per instructions) -->
+<header class="w-full bg-surface-container-lowest border-b border-surface-variant py-md px-md sticky top-0 z-50">
+<div class="max-w-container-max mx-auto flex justify-between items-center h-[48px]">
+<a href="#" class="font-display-lg text-display-lg font-bold text-primary flex items-center gap-sm hover:opacity-80 transition-opacity">
+                LUXE
+            </a>
+<a href="#" class="font-label-lg text-label-lg text-secondary flex items-center gap-xs hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+                Secure Checkout
+            </a>
+</div>
+</header>
+<main class="flex-grow max-w-container-max mx-auto w-full px-md py-margin-desktop md:py-xl grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Checkout Steps -->
+<div class="md:col-span-8 space-y-md">
+<!-- Step Indicators -->
+<div class="flex items-center justify-between mb-xl relative">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[1px] bg-outline-variant -z-10"></div>
+<!-- Step 1 Indicator -->
+<div class="flex flex-col items-center gap-sm bg-background px-sm" id="indicator-1">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-lg text-label-lg shadow-sm transition-colors duration-300">1</div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wide">Shipping</span>
+</div>
+<!-- Step 2 Indicator -->
+<div class="flex flex-col items-center gap-sm bg-background px-sm" id="indicator-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-lg text-label-lg transition-colors duration-300">2</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Payment</span>
+</div>
+<!-- Step 3 Indicator -->
+<div class="flex flex-col items-center gap-sm bg-background px-sm" id="indicator-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-lg text-label-lg transition-colors duration-300">3</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Review</span>
+</div>
+</div>
+<!-- Step 1: Shipping Address -->
+<section id="step-1" class="bg-surface-container-lowest p-xl rounded-xl shadow-sm border border-outline-variant/30">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-lg">Shipping Address</h2>
+<form id="form-shipping" class="space-y-md" onsubmit="event.preventDefault(); checkoutApp.nextStep();">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs" for="firstName">First Name</label>
+<input type="text" id="firstName" required="" class="w-full h-lg bg-surface px-md border border-outline rounded-DEFAULT font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all hover:border-primary/50">
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs" for="lastName">Last Name</label>
+<input type="text" id="lastName" required="" class="w-full h-lg bg-surface px-md border border-outline rounded-DEFAULT font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all hover:border-primary/50">
+</div>
+</div>
+<div class="">
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs" for="address">Street Address</label>
+<input type="text" id="address" required="" class="w-full h-lg bg-surface px-md border border-outline rounded-DEFAULT font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all hover:border-primary/50">
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="md:col-span-2">
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs" for="city">City</label>
+<input type="text" id="city" required="" class="w-full h-lg bg-surface px-md border border-outline rounded-DEFAULT font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all hover:border-primary/50">
+</div>
+<div class="">
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs" for="zip">Postal Code</label>
+<input type="text" id="zip" required="" class="w-full h-lg bg-surface px-md border border-outline rounded-DEFAULT font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all hover:border-primary/50">
+</div>
+</div>
+<div class="pt-md mt-md border-t border-surface-variant flex justify-end">
+<button type="submit" class="h-lg px-xl bg-primary text-on-primary font-label-lg text-label-lg rounded-DEFAULT hover:opacity-90 transition-opacity flex items-center justify-center gap-sm hover:shadow-md">
+                            Continue to Payment
+                            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</form>
+</section>
+<!-- Step 2: Payment Method -->
+<section id="step-2" class="step-hidden bg-surface-container-lowest p-xl rounded-xl shadow-sm border border-outline-variant/30">
+<div class="flex items-center gap-sm mb-lg">
+<button type="button" onclick="checkoutApp.prevStep()" class="text-secondary hover:text-primary transition-colors flex items-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="font-headline-md text-headline-md text-on-surface">Payment Method</h2>
+</div>
+<form id="form-payment" class="space-y-md" onsubmit="event.preventDefault(); checkoutApp.nextStep();">
+<!-- Mock Card Selection -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-lg">
+<label class="relative flex cursor-pointer p-md border border-primary bg-primary/5 rounded-lg transition-all items-center gap-md">
+<input type="radio" name="payment_method" value="credit_card" checked="" class="text-primary focus:ring-primary h-4 w-4 border-outline hover:border-primary/50">
+<span class="material-symbols-outlined text-primary text-[28px]">credit_card</span>
+<span class="font-label-lg text-label-lg text-on-surface flex-grow">Credit Card</span>
+</label>
+<label class="relative flex cursor-pointer p-md border border-outline bg-surface rounded-lg hover:border-primary/50 transition-all items-center gap-md">
+<input type="radio" name="payment_method" value="paypal" class="text-primary focus:ring-primary h-4 w-4 border-outline hover:border-primary/50">
+<span class="material-symbols-outlined text-secondary text-[28px]">account_balance_wallet</span>
+<span class="font-label-lg text-label-lg text-on-surface flex-grow">Digital Wallet</span>
+</label>
+</div>
+<div class="space-y-md">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs" for="cardName">Name on Card</label>
+<input type="text" id="cardName" required="" class="w-full h-lg bg-surface px-md border border-outline rounded-DEFAULT font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all hover:border-primary/50">
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs" for="cardNumber">Card Number</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">credit_card</span>
+<input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" required="" class="w-full h-lg bg-surface pl-[48px] pr-md border border-outline rounded-DEFAULT font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-mono hover:border-primary/50">
+</div>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs" for="expiry">Expiry (MM/YY)</label>
+<input type="text" id="expiry" placeholder="MM/YY" required="" class="w-full h-lg bg-surface px-md border border-outline rounded-DEFAULT font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-mono hover:border-primary/50">
+</div>
+<div class="">
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs" for="cvv">CVV</label>
+<input type="text" id="cvv" placeholder="123" required="" class="w-full h-lg bg-surface px-md border border-outline rounded-DEFAULT font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-mono hover:border-primary/50">
+</div>
+</div>
+</div>
+<div class="pt-md mt-md border-t border-surface-variant flex justify-end">
+<button type="submit" class="h-lg px-xl bg-primary text-on-primary font-label-lg text-label-lg rounded-DEFAULT hover:opacity-90 transition-opacity flex items-center justify-center gap-sm">
+                            Review Order
+                            <span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</form>
+</section>
+<!-- Step 3: Order Review -->
+<section id="step-3" class="step-hidden bg-surface-container-lowest p-xl rounded-xl shadow-sm border border-outline-variant/30">
+<div class="flex items-center gap-sm mb-lg">
+<button type="button" onclick="checkoutApp.prevStep()" class="text-secondary hover:text-primary transition-colors flex items-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="font-headline-md text-headline-md text-on-surface">Review Order</h2>
+</div>
+<div class="space-y-lg">
+<!-- Summary Blocks -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="p-md bg-surface rounded-lg border border-outline-variant">
+<h3 class="font-label-lg text-label-lg text-on-surface mb-sm flex justify-between items-center">
+                                Shipping Details
+                                <button type="button" onclick="checkoutApp.goToStep(1)" class="text-primary font-label-sm text-label-sm underline hover:opacity-80">Edit</button>
+</h3>
+<div class="font-body-md text-body-md text-on-surface-variant" id="review-shipping">
+<!-- Populated by JS -->
+</div>
+</div>
+<div class="p-md bg-surface rounded-lg border border-outline-variant">
+<h3 class="font-label-lg text-label-lg text-on-surface mb-sm flex justify-between items-center">
+                                Payment Method
+                                <button type="button" onclick="checkoutApp.goToStep(2)" class="text-primary font-label-sm text-label-sm underline hover:opacity-80">Edit</button>
+</h3>
+<div class="font-body-md text-body-md text-on-surface-variant flex items-center gap-sm" id="review-payment">
+<span class="material-symbols-outlined text-outline">credit_card</span>
+                                Card ending in <span id="review-card-last4" class="font-mono text-on-surface">****</span>
+</div>
+</div>
+</div>
+<div class="pt-xl border-t border-surface-variant">
+<button type="button" onclick="checkoutApp.submitOrder()" id="btn-place-order" class="w-full h-[64px] bg-primary text-on-primary font-label-lg text-[16px] rounded-DEFAULT hover:bg-on-primary-fixed transition-colors flex items-center justify-center gap-sm shadow-md">
+<span class="material-symbols-outlined">lock</span>
+                            Place Order - $340.00
+                        </button>
+<p class="text-center font-label-sm text-label-sm text-secondary mt-sm">By placing this order, you agree to our Terms of Service.</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Order Summary Sidebar -->
+<aside class="md:col-span-4">
+<div class="sticky top-[100px] bg-surface-container-lowest p-lg rounded-xl shadow-sm border border-outline-variant/50">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-md pb-sm border-b border-surface-variant">Order Summary</h2>
+<!-- Items -->
+<div class="space-y-md mb-lg">
+<!-- Item 1 -->
+<div class="flex gap-md items-start transition-all hover:border-primary/30 border border-transparent p-xs rounded-lg">
+<div class="w-[80px] h-[100px] bg-surface-container-high rounded flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A high-end, studio-lit photograph of a minimalist matte black ceramic vase set against a stark white backdrop. The lighting is crisp and modern, highlighting the subtle textures of the ceramic surface. The overall aesthetic is clean, luxurious, and architectural, fitting perfectly into a modern corporate or upscale retail design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvp_iKqiQTb04dGdrK1u4U-44_pif1z7iUUHdrV6JGD_Ciy53-5IFU2iV48ecEDLa4Ovoa_LY5BAPuZyQgl1bxvLUBAs5DJ212Gxxg7bQZtGYKzC-zmIph4hFDUguvEhArBLR2WNBjbaq6E_jzarm6mVtOCAV_C4xBD28DPu0qDQVB8i9eKqQLnUGmKR4bq4zEl6iOyC_QsdQzy6QJATI9H-brBPt6cKA24F4fIMFXIaHmYOCOjrZAJA">
+</div>
+<div class="flex-grow">
+<h4 class="font-label-lg text-label-lg text-on-surface">Matte Black Ceramic Vase</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Qty: 1</p>
+</div>
+<div class="font-label-lg text-label-lg text-on-surface whitespace-nowrap">
+                            $120.00
+                        </div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-md items-start transition-all hover:border-primary/30 border border-transparent p-xs rounded-lg">
+<div class="w-[80px] h-[100px] bg-surface-container-high rounded flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A sleek, modern desk lamp crafted from brushed steel and natural oak wood. The product is shot straight-on in a brightly lit, minimalist studio environment with soft shadows. The color palette is neutral and sophisticated, emphasizing the high-quality materials and clean geometric lines of the lamp, tailored for a premium ecommerce experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUo4vgl3jXq7i83gXGOB4DwB0LL8g9ioqWIWQZQpHrgRaRq-KHgqfHw--4WPAmEkdR2IhMLtrQn4rUVXGuCiIIpOVvvLxxgnn-dnO2I6EBdtqnwAcMy_0jgE6diYGqly9eZFeBIOLAajUqj3nThFBBpuE5ZVMOOMhEwMZqIi-Etyoak28HLkrjACvwbVQzBHj6w9BXb_He50L9uVRncRIZRFgSBLZfh9LmktS8KrawqN6jfHQfJUlUaQ">
+</div>
+<div class="flex-grow">
+<h4 class="font-label-lg text-label-lg text-on-surface">Oak &amp; Steel Desk Lamp</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Qty: 1</p>
+</div>
+<div class="font-label-lg text-label-lg text-on-surface whitespace-nowrap">
+                            $200.00
+                        </div>
+</div>
+</div>
+<!-- Totals -->
+<div class="space-y-sm pt-md border-t border-surface-variant font-body-md text-body-md">
+<div class="flex justify-between text-on-surface-variant">
+<span class="">Subtotal</span>
+<span class="">$320.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span class="">Shipping</span>
+<span class="">$20.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span class="">Tax</span>
+<span class="">Calculated at next step</span>
+</div>
+<div class="flex justify-between items-center pt-md mt-sm border-t border-outline-variant/30 font-headline-md text-headline-md text-on-surface">
+<span class="">Total</span>
+<span class="">$340.00</span>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- Interactive Logic -->
+<script class="">
+        const checkoutApp = (function() {
+            // --- Configuration ---
+            const TOTAL_STEPS = 3;
+            let currentStep = 1;
+
+            // --- DOM Elements ---
+            const elements = {
+                steps: [
+                    document.getElementById('step-1'),
+                    document.getElementById('step-2'),
+                    document.getElementById('step-3')
+                ],
+                indicators: [
+                    document.getElementById('indicator-1'),
+                    document.getElementById('indicator-2'),
+                    document.getElementById('indicator-3')
+                ],
+                forms: {
+                    shipping: document.getElementById('form-shipping'),
+                    payment: document.getElementById('form-payment')
+                },
+                review: {
+                    shipping: document.getElementById('review-shipping'),
+                    cardLast4: document.getElementById('review-card-last4')
+                },
+                btnPlaceOrder: document.getElementById('btn-place-order')
+            };
+
+            // --- UI Functions ---
+            function updateUI() {
+                // Update Step Visibility
+                elements.steps.forEach((stepEl, index) => {
+                    if (index + 1 === currentStep) {
+                        stepEl.classList.remove('step-hidden');
+                        // Small animation effect
+                        stepEl.style.opacity = 0;
+                        setTimeout(() => {
+                            stepEl.style.transition = 'opacity 0.3s ease';
+                            stepEl.style.opacity = 1;
+                        }, 50);
+                    } else {
+                        stepEl.classList.add('step-hidden');
+                    }
+                });
+
+                // Update Indicators
+                elements.indicators.forEach((indEl, index) => {
+                    const stepNum = index + 1;
+                    const circle = indEl.querySelector('div');
+                    const text = indEl.querySelector('span');
+                    
+                    if (stepNum === currentStep) {
+                        circle.className = 'w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-lg text-label-lg shadow-sm transition-colors duration-300';
+                        text.className = 'font-label-sm text-label-sm text-primary uppercase tracking-wide';
+                    } else if (stepNum < currentStep) {
+                        circle.className = 'w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center font-label-lg text-label-lg transition-colors duration-300';
+                        circle.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span>';
+                        text.className = 'font-label-sm text-label-sm text-secondary uppercase tracking-wide';
+                    } else {
+                        circle.className = 'w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-lg text-label-lg transition-colors duration-300';
+                        circle.innerHTML = stepNum;
+                        text.className = 'font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide';
+                    }
+                });
+
+                // Populate Review Data if on step 3
+                if (currentStep === 3) {
+                    populateReviewData();
+                }
+            }
+
+            function populateReviewData() {
+                const fName = document.getElementById('firstName').value || 'John';
+                const lName = document.getElementById('lastName').value || 'Doe';
+                const address = document.getElementById('address').value || '123 Luxury Ave';
+                const city = document.getElementById('city').value || 'Metropolis';
+                const zip = document.getElementById('zip').value || '10001';
+                
+                elements.review.shipping.innerHTML = `
+                    ${fName} ${lName}<br>
+                    ${address}<br>
+                    ${city}, ${zip}
+                `;
+
+                const cardNum = document.getElementById('cardNumber').value || '0000';
+                const last4 = cardNum.slice(-4);
+                elements.review.cardLast4.textContent = last4.padStart(4, '*');
+            }
+
+            // --- Validation Functions ---
+            function validateStep(step) {
+                if (step === 1) {
+                    return elements.forms.shipping.checkValidity();
+                }
+                if (step === 2) {
+                    return elements.forms.payment.checkValidity();
+                }
+                return true;
+            }
+
+            // --- Public API ---
+            return {
+                nextStep: function() {
+                    if (validateStep(currentStep) && currentStep < TOTAL_STEPS) {
+                        currentStep++;
+                        updateUI();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        // Force native HTML5 validation UI
+                        if(currentStep === 1) elements.forms.shipping.reportValidity();
+                        if(currentStep === 2) elements.forms.payment.reportValidity();
+                    }
+                },
+                prevStep: function() {
+                    if (currentStep > 1) {
+                        currentStep--;
+                        updateUI();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                },
+                goToStep: function(step) {
+                    if (step < currentStep) {
+                        currentStep = step;
+                        updateUI();
+                    }
+                },
+                submitOrder: function() {
+                    const btn = elements.btnPlaceOrder;
+                    const originalText = btn.innerHTML;
+                    
+                    // Loading State
+                    btn.disabled = true;
+                    btn.innerHTML = `<span class="material-symbols-outlined animate-spin">progress_activity</span> Processing...`;
+                    btn.classList.add('opacity-80');
+
+                    // --- Backend Integration ---
+                    // MOCK API CALL: POST /api/orders
+                    /*
+                    const payload = {
+                        shipping: { ... },
+                        payment: { ... },
+                        items: [ ... ]
+                    };
+                    fetch('/api/orders', { method: 'POST', body: JSON.stringify(payload) })
+                    */
+                    
+                    setTimeout(() => {
+                        // Success State
+                        btn.innerHTML = `<span class="material-symbols-outlined">check_circle</span> Order Confirmed!`;
+                        btn.classList.replace('bg-primary', 'bg-secondary');
+                        
+                        // Redirect simulated
+                        setTimeout(() => {
+                            alert("Order successfully placed! Redirecting to confirmation...");
+                        }, 1000);
+                    }, 2000);
+                }
+            };
+        })();
+    </script>
+
+</body></html>

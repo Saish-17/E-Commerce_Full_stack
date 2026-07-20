@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - LUXE</title>
+  <meta name="description" content="LUXE admin dashboard — manage products, orders, and customer insights.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    try {
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#ffffff", "surface-container-high": "#e6e8ea",
+              "secondary-fixed": "#d3e4fe", "primary-fixed": "#e0e0ff",
+              "error": "#ba1a1a", "surface-bright": "#f7f9fb",
+              "surface-variant": "#e0e3e5", "error-container": "#ffdad6",
+              "on-error-container": "#93000a", "primary-fixed-dim": "#bdc2ff",
+              "outline": "#767683", "surface-tint": "#4c56af",
+              "surface-dim": "#d8dadc", "primary": "#000666",
+              "surface-container-low": "#f2f4f6", "secondary-fixed-dim": "#b7c8e1",
+              "on-secondary-container": "#54647a", "surface": "#f7f9fb",
+              "surface-container-highest": "#e0e3e5", "tertiary-container": "#5c1800",
+              "on-surface-variant": "#454652", "inverse-on-surface": "#eff1f3",
+              "on-secondary-fixed-variant": "#38485d", "primary-container": "#1a237e",
+              "secondary-container": "#d0e1fb", "inverse-surface": "#2d3133",
+              "on-tertiary-container": "#e17c5a", "on-primary-fixed-variant": "#343d96",
+              "surface-container-lowest": "#ffffff", "secondary": "#505f76",
+              "on-primary-fixed": "#000767", "tertiary-fixed-dim": "#ffb59d",
+              "on-secondary": "#ffffff", "on-primary-container": "#8690ee",
+              "on-surface": "#191c1e", "surface-container": "#eceef0",
+              "outline-variant": "#c6c5d4", "on-error": "#ffffff",
+              "background": "#f7f9fb", "on-background": "#191c1e",
+              "tertiary": "#380b00", "inverse-primary": "#bdc2ff",
+              "tertiary-fixed": "#ffdbd0", "on-tertiary": "#ffffff"
+            },
+            borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+            spacing: {
+              "gutter": "24px", "margin-desktop": "64px", "xl": "80px",
+              "container-max": "1280px", "base": "8px", "sm": "12px",
+              "xs": "4px", "lg": "48px", "md": "24px"
+            },
+            fontFamily: {
+              "body-lg": ["Inter"], "headline-md": ["Hanken Grotesk"],
+              "display-lg": ["Hanken Grotesk"], "body-md": ["Inter"],
+              "label-lg": ["Inter"], "headline-lg": ["Hanken Grotesk"], "label-sm": ["Inter"]
+            },
+            fontSize: {
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+              "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+              "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+              "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }]
+            }
+          }
+        }
+      };
+    } catch (_e) {}
+  </script>
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .material-symbols-outlined.filled { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .sidebar-link.active { background: #1a237e; color: #8690ee; }
+    .sidebar-link.active .material-symbols-outlined { color: #8690ee; }
+    #modal-overlay { transition: opacity 0.2s ease; }
+    .section-panel { display: none; }
+    .section-panel.active { display: block; }
+    #status-select { appearance: none; }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col md:flex-row">
+
+<!-- ===================== SIDEBAR ===================== -->
+<aside class="w-full md:w-64 bg-surface-container-lowest border-r border-outline-variant flex-shrink-0 flex-col hidden md:flex sticky top-0 h-screen">
+  <div class="p-md flex items-center justify-between border-b border-outline-variant">
+    <span class="font-display-lg text-display-lg text-primary tracking-tight text-2xl font-bold">LUXE</span>
+    <span class="text-secondary font-label-sm text-label-sm uppercase tracking-wider bg-primary-fixed text-on-primary-fixed px-xs py-xs rounded text-[10px]">Admin</span>
+  </div>
+  <nav class="flex-1 overflow-y-auto py-md px-sm space-y-1">
+    <a class="sidebar-link active flex items-center gap-sm px-sm py-2 rounded-md font-label-lg text-label-lg" href="#" data-panel="overview">
+      <span class="material-symbols-outlined filled">dashboard</span> Overview
+    </a>
+    <a class="sidebar-link flex items-center gap-sm px-sm py-2 rounded-md text-secondary hover:bg-surface-container hover:text-primary transition-colors font-label-lg text-label-lg" href="#" data-panel="products">
+      <span class="material-symbols-outlined">inventory_2</span> Products
+    </a>
+    <a class="sidebar-link flex items-center gap-sm px-sm py-2 rounded-md text-secondary hover:bg-surface-container hover:text-primary transition-colors font-label-lg text-label-lg" href="#" data-panel="orders">
+      <span class="material-symbols-outlined">receipt_long</span> Orders
+    </a>
+    <a class="sidebar-link flex items-center gap-sm px-sm py-2 rounded-md text-secondary hover:bg-surface-container hover:text-primary transition-colors font-label-lg text-label-lg mt-xl" href="/index.html">
+      <span class="material-symbols-outlined">storefront</span> View Store
+    </a>
+  </nav>
+  <div class="p-md border-t border-outline-variant">
+    <a id="sidebar-logout" class="flex items-center gap-sm text-secondary hover:text-error transition-colors font-label-lg text-label-lg cursor-pointer">
+      <span class="material-symbols-outlined">logout</span> Sign Out
+    </a>
+  </div>
+</aside>
+
+<!-- ===================== MOBILE TOP BAR ===================== -->
+<header class="md:hidden bg-surface-container-lowest border-b border-outline-variant p-sm flex items-center justify-between sticky top-0 z-50 shadow-sm">
+  <span class="font-headline-md text-headline-md text-primary font-bold">LUXE Admin</span>
+  <div class="flex gap-sm">
+    <a href="/index.html" class="p-2 text-secondary"><span class="material-symbols-outlined">storefront</span></a>
+    <button id="mobile-logout" class="p-2 text-secondary"><span class="material-symbols-outlined">logout</span></button>
+  </div>
+</header>
+
+<!-- ===================== MAIN CONTENT ===================== -->
+<main class="flex-1 flex flex-col min-w-0 bg-surface">
+
+  <!-- Sticky top bar (desktop) -->
+  <header class="h-[80px] px-md border-b border-outline-variant bg-surface-container-lowest items-center justify-between sticky top-0 z-40 hidden md:flex">
+    <h1 id="page-title" class="font-headline-lg text-headline-lg text-on-surface">Dashboard Overview</h1>
+    <div class="flex items-center gap-md">
+      <div class="relative">
+        <span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-secondary">search</span>
+        <input id="admin-search" class="pl-xl pr-sm py-2 bg-surface-container rounded-full border-none focus:ring-1 focus:ring-primary text-body-md w-64 transition-all" placeholder="Search products…" type="text">
+      </div>
+      <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-lg font-bold" id="admin-avatar">A</div>
+    </div>
+  </header>
+
+  <!-- Content area -->
+  <div class="p-md lg:p-xl max-w-container-max mx-auto w-full flex-1 overflow-y-auto space-y-xl">
+
+    <!-- ====== OVERVIEW PANEL ====== -->
+    <div id="panel-overview" class="section-panel active space-y-xl">
+
+      <!-- Stats Cards -->
+      <section>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+          <div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant shadow-sm flex flex-col gap-sm">
+            <div class="flex items-center justify-between text-secondary">
+              <span class="font-label-lg text-label-lg">Total Revenue</span>
+              <span class="material-symbols-outlined">payments</span>
+            </div>
+            <div id="stat-revenue" class="font-headline-lg text-headline-lg text-on-surface animate-pulse">—</div>
+            <div class="flex items-center gap-xs text-primary font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-[16px]">trending_up</span>
+              <span>Live from database</span>
+            </div>
+          </div>
+          <div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant shadow-sm flex flex-col gap-sm">
+            <div class="flex items-center justify-between text-secondary">
+              <span class="font-label-lg text-label-lg">Total Orders</span>
+              <span class="material-symbols-outlined">shopping_bag</span>
+            </div>
+            <div id="stat-orders" class="font-headline-lg text-headline-lg text-on-surface animate-pulse">—</div>
+            <div class="flex items-center gap-xs text-primary font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-[16px]">trending_up</span>
+              <span>All time orders</span>
+            </div>
+          </div>
+          <div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant shadow-sm flex flex-col gap-sm">
+            <div class="flex items-center justify-between text-secondary">
+              <span class="font-label-lg text-label-lg">Registered Users</span>
+              <span class="material-symbols-outlined">group</span>
+            </div>
+            <div id="stat-users" class="font-headline-lg text-headline-lg text-on-surface animate-pulse">—</div>
+            <div class="flex items-center gap-xs text-secondary font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-[16px]">trending_flat</span>
+              <span>Total accounts</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent Orders Table -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-md">
+        <section class="lg:col-span-2 bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden flex flex-col">
+          <div class="p-md border-b border-outline-variant flex items-center justify-between bg-surface-bright">
+            <h2 class="font-headline-md text-headline-md text-on-surface">Recent Orders</h2>
+            <button onclick="switchPanel('orders')" class="text-primary font-label-lg text-label-lg hover:underline">View All</button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-surface-container-low text-secondary font-label-sm text-label-sm uppercase tracking-wider border-b border-outline-variant">
+                  <th class="p-sm font-medium">Order ID</th>
+                  <th class="p-sm font-medium">Customer</th>
+                  <th class="p-sm font-medium">Date</th>
+                  <th class="p-sm font-medium">Status</th>
+                  <th class="p-sm font-medium text-right">Amount</th>
+                  <th class="p-sm font-medium text-right">Action</th>
+                </tr>
+              </thead>
+              <tbody id="recent-orders-body" class="text-body-md text-on-surface divide-y divide-outline-variant">
+                <tr><td colspan="6" class="p-md text-center text-secondary">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Top Products Quick View -->
+        <section class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden flex flex-col">
+          <div class="p-md border-b border-outline-variant flex items-center justify-between bg-surface-bright">
+            <h2 class="font-headline-md text-headline-md text-on-surface">Products</h2>
+            <button onclick="openProductModal()" class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center hover:opacity-90 transition-opacity">
+              <span class="material-symbols-outlined text-[18px]">add</span>
+            </button>
+          </div>
+          <div id="top-products-list" class="p-sm flex flex-col gap-sm flex-1">
+            <p class="text-secondary text-center py-md">Loading…</p>
+          </div>
+          <div class="mt-auto p-sm border-t border-outline-variant bg-surface-bright">
+            <button onclick="switchPanel('products')" class="w-full py-2 text-center text-primary font-label-lg text-label-lg hover:bg-primary-fixed transition-colors rounded-md">Manage All Products</button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- ====== PRODUCTS PANEL ====== -->
+    <div id="panel-products" class="section-panel space-y-md">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-md">
+        <h2 class="font-headline-lg text-headline-lg text-on-surface">Product Inventory</h2>
+        <button onclick="openProductModal()" class="flex items-center gap-xs h-[48px] px-lg rounded-DEFAULT bg-primary text-on-primary font-label-lg text-label-lg hover:opacity-80 transition-opacity">
+          <span class="material-symbols-outlined text-[20px]">add</span> Add Product
+        </button>
+      </div>
+      <div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-surface-container-low text-secondary font-label-sm text-label-sm uppercase tracking-wider border-b border-outline-variant">
+              <th class="p-sm font-medium">Product</th>
+              <th class="p-sm font-medium">Category</th>
+              <th class="p-sm font-medium text-right">Price</th>
+              <th class="p-sm font-medium text-right">Stock</th>
+              <th class="p-sm font-medium text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="products-table-body" class="divide-y divide-outline-variant">
+            <tr><td colspan="5" class="p-md text-center text-secondary">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ====== ORDERS PANEL ====== -->
+    <div id="panel-orders" class="section-panel space-y-md">
+      <h2 class="font-headline-lg text-headline-lg text-on-surface">All Orders</h2>
+      <div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-surface-container-low text-secondary font-label-sm text-label-sm uppercase tracking-wider border-b border-outline-variant">
+              <th class="p-sm font-medium">Order ID</th>
+              <th class="p-sm font-medium">Customer</th>
+              <th class="p-sm font-medium">Date</th>
+              <th class="p-sm font-medium">Status</th>
+              <th class="p-sm font-medium text-right">Amount</th>
+              <th class="p-sm font-medium text-right">Update</th>
+            </tr>
+          </thead>
+          <tbody id="all-orders-body" class="text-body-md text-on-surface divide-y divide-outline-variant">
+            <tr><td colspan="6" class="p-md text-center text-secondary">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div><!-- /content area -->
+</main>
+
+<!-- ===================== PRODUCT MODAL ===================== -->
+<div id="modal-overlay" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 opacity-0 pointer-events-none">
+  <div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-2xl w-full max-w-lg mx-md p-lg flex flex-col gap-md">
+    <div class="flex items-center justify-between">
+      <h3 id="modal-title" class="font-headline-md text-headline-md text-on-surface">Add Product</h3>
+      <button onclick="closeProductModal()" class="text-secondary hover:text-on-surface">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <form id="product-form" class="space-y-md" onsubmit="submitProduct(event)">
+      <input type="hidden" id="product-id">
+      <div class="grid grid-cols-2 gap-md">
+        <div class="col-span-2">
+          <label class="font-label-sm text-label-sm text-secondary block mb-xs">Name *</label>
+          <input id="p-name" required class="w-full px-sm py-2 bg-surface-container border border-outline-variant rounded-lg text-body-md focus:ring-1 focus:ring-primary focus:outline-none" placeholder="e.g. Silk Blazer">
+        </div>
+        <div>
+          <label class="font-label-sm text-label-sm text-secondary block mb-xs">Price ($) *</label>
+          <input id="p-price" type="number" step="0.01" min="0" required class="w-full px-sm py-2 bg-surface-container border border-outline-variant rounded-lg text-body-md focus:ring-1 focus:ring-primary focus:outline-none" placeholder="299.00">
+        </div>
+        <div>
+          <label class="font-label-sm text-label-sm text-secondary block mb-xs">Stock *</label>
+          <input id="p-stock" type="number" min="0" required class="w-full px-sm py-2 bg-surface-container border border-outline-variant rounded-lg text-body-md focus:ring-1 focus:ring-primary focus:outline-none" placeholder="50">
+        </div>
+        <div>
+          <label class="font-label-sm text-label-sm text-secondary block mb-xs">Category</label>
+          <select id="p-category" class="w-full px-sm py-2 bg-surface-container border border-outline-variant rounded-lg text-body-md focus:ring-1 focus:ring-primary focus:outline-none">
+            <option value="Apparel">Apparel</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Footwear">Footwear</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Bags">Bags</option>
+            <option value="Watches">Watches</option>
+          </select>
+        </div>
+        <div>
+          <label class="font-label-sm text-label-sm text-secondary block mb-xs">Rating (0–5)</label>
+          <input id="p-rating" type="number" step="0.1" min="0" max="5" class="w-full px-sm py-2 bg-surface-container border border-outline-variant rounded-lg text-body-md focus:ring-1 focus:ring-primary focus:outline-none" placeholder="4.5">
+        </div>
+        <div class="col-span-2">
+          <label class="font-label-sm text-label-sm text-secondary block mb-xs">Image URL</label>
+          <input id="p-image" class="w-full px-sm py-2 bg-surface-container border border-outline-variant rounded-lg text-body-md focus:ring-1 focus:ring-primary focus:outline-none" placeholder="https://…">
+        </div>
+        <div class="col-span-2">
+          <label class="font-label-sm text-label-sm text-secondary block mb-xs">Description</label>
+          <textarea id="p-description" rows="3" class="w-full px-sm py-2 bg-surface-container border border-outline-variant rounded-lg text-body-md focus:ring-1 focus:ring-primary focus:outline-none resize-none" placeholder="Product description…"></textarea>
+        </div>
+      </div>
+      <div class="flex justify-end gap-sm pt-sm">
+        <button type="button" onclick="closeProductModal()" class="h-[44px] px-lg rounded-DEFAULT border border-outline text-on-surface hover:bg-surface-container font-label-lg text-label-lg transition-colors">Cancel</button>
+        <button type="submit" id="modal-submit-btn" class="h-[44px] px-lg rounded-DEFAULT bg-primary text-on-primary hover:opacity-80 font-label-lg text-label-lg transition-opacity">Save Product</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/js/main.js"></script>
+<script>
+  const STATUS_BADGES = {
+    processing: 'bg-secondary-container text-on-secondary-container',
+    shipped:    'bg-primary-fixed text-on-primary-fixed',
+    delivered:  'bg-surface-variant text-on-surface-variant',
+    cancelled:  'bg-error-container text-on-error-container'
+  };
+
+  let currentPanel = 'overview';
+  let editingProductId = null;
+
+  // ─── Auth Guard ────────────────────────────────────────────
+  function authGuard() {
+    const token = Auth.getToken();
+    if (!token) { window.location.href = '/login.html'; return false; }
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    if (payload.role !== 'admin') {
+      Toast.show('Admin access required', 'error');
+      setTimeout(() => window.location.href = '/index.html', 1500);
+      return false;
+    }
+    document.getElementById('admin-avatar').textContent = (payload.name || 'A')[0].toUpperCase();
+    return true;
+  }
+
+  // ─── API Helper ────────────────────────────────────────────
+  async function api(path, method = 'GET', body = null) {
+    const opts = {
+      method,
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${Auth.getToken()}` }
+    };
+    if (body) opts.body = JSON.stringify(body);
+    const res = await fetch(path, opts);
+    if (!res.ok) throw new Error((await res.json()).error || 'API error');
+    return res.json();
+  }
+
+  // ─── Panel Switching ───────────────────────────────────────
+  function switchPanel(name) {
+    document.querySelectorAll('.section-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById(`panel-${name}`).classList.add('active');
+
+    document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+    const link = document.querySelector(`.sidebar-link[data-panel="${name}"]`);
+    if (link) link.classList.add('active');
+
+    const titles = { overview: 'Dashboard Overview', products: 'Product Inventory', orders: 'All Orders' };
+    document.getElementById('page-title').textContent = titles[name] || '';
+    currentPanel = name;
+
+    if (name === 'products') loadProducts();
+    if (name === 'orders') loadAllOrders();
+  }
+
+  document.querySelectorAll('.sidebar-link[data-panel]').forEach(link => {
+    link.addEventListener('click', e => { e.preventDefault(); switchPanel(link.dataset.panel); });
+  });
+
+  // ─── Load Stats ────────────────────────────────────────────
+  async function loadStats() {
+    try {
+      const data = await api('/api/admin/stats');
+      document.getElementById('stat-revenue').textContent = `$${parseFloat(data.total_revenue || 0).toLocaleString('en-US', { minimumFractionDigits: 2 })}`;
+      document.getElementById('stat-orders').textContent = data.total_orders?.toLocaleString() || '0';
+      document.getElementById('stat-users').textContent = data.total_users?.toLocaleString() || '0';
+      document.querySelectorAll('.animate-pulse').forEach(el => el.classList.remove('animate-pulse'));
+    } catch (e) { console.error('Stats error:', e); }
+  }
+
+  // ─── Load Recent Orders (overview) ────────────────────────
+  async function loadRecentOrders() {
+    try {
+      const orders = await api('/api/admin/orders?limit=5');
+      const tbody = document.getElementById('recent-orders-body');
+      if (!orders.length) { tbody.innerHTML = '<tr><td colspan="6" class="p-md text-center text-secondary">No orders yet.</td></tr>'; return; }
+      tbody.innerHTML = orders.map(o => `
+        <tr class="hover:bg-surface-container-low transition-colors">
+          <td class="p-sm font-label-lg text-primary">#${o.id}</td>
+          <td class="p-sm">${o.customer_name || 'Guest'}</td>
+          <td class="p-sm text-secondary">${new Date(o.created_at).toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'})}</td>
+          <td class="p-sm"><span class="inline-flex items-center px-2 py-1 rounded-full text-[10px] font-bold tracking-wide uppercase ${STATUS_BADGES[o.status] || STATUS_BADGES.processing}">${o.status}</span></td>
+          <td class="p-sm text-right font-label-lg">$${parseFloat(o.total_amount).toFixed(2)}</td>
+          <td class="p-sm text-right"><button onclick="updateOrderStatus(${o.id})" class="text-primary hover:underline font-label-sm text-label-sm">Update</button></td>
+        </tr>
+      `).join('');
+    } catch (e) { console.error('Recent orders error:', e); }
+  }
+
+  // ─── Load All Orders (orders panel) ───────────────────────
+  async function loadAllOrders() {
+    try {
+      const orders = await api('/api/admin/orders');
+      const tbody = document.getElementById('all-orders-body');
+      if (!orders.length) { tbody.innerHTML = '<tr><td colspan="6" class="p-md text-center text-secondary">No orders yet.</td></tr>'; return; }
+      tbody.innerHTML = orders.map(o => `
+        <tr class="hover:bg-surface-container-low transition-colors">
+          <td class="p-sm font-label-lg text-primary">#${o.id}</td>
+          <td class="p-sm">${o.customer_name || 'Guest'}</td>
+          <td class="p-sm text-secondary">${new Date(o.created_at).toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'})}</td>
+          <td class="p-sm">
+            <select id="status-select" onchange="changeStatus(${o.id}, this.value)" class="appearance-none bg-surface-container border border-outline-variant rounded px-xs py-1 text-label-sm font-label-sm focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer">
+              ${['processing','shipped','delivered','cancelled'].map(s => `<option value="${s}" ${o.status===s?'selected':''}>${s.charAt(0).toUpperCase()+s.slice(1)}</option>`).join('')}
+            </select>
+          </td>
+          <td class="p-sm text-right font-label-lg">$${parseFloat(o.total_amount).toFixed(2)}</td>
+          <td class="p-sm text-right">
+            <span class="inline-flex items-center px-2 py-1 rounded-full text-[10px] font-bold tracking-wide uppercase ${STATUS_BADGES[o.status] || STATUS_BADGES.processing}">${o.status}</span>
+          </td>
+        </tr>
+      `).join('');
+    } catch (e) { console.error('All orders error:', e); }
+  }
+
+  async function changeStatus(orderId, status) {
+    try {
+      await api(`/api/admin/orders/${orderId}/status`, 'PUT', { status });
+      Toast.show('Order status updated', 'success');
+      loadAllOrders();
+      loadRecentOrders();
+    } catch (e) { Toast.show(e.message, 'error'); }
+  }
+
+  async function updateOrderStatus(orderId) { switchPanel('orders'); }
+
+  // ─── Load Products (overview quick-list + products panel) ──
+  async function loadTopProducts() {
+    try {
+      const products = await api('/api/products?limit=5');
+      const list = document.getElementById('top-products-list');
+      if (!products.products?.length) { list.innerHTML = '<p class="text-secondary text-center py-md text-label-sm">No products.</p>'; return; }
+      list.innerHTML = products.products.map(p => `
+        <div class="flex items-center gap-sm p-sm hover:bg-surface-container-low rounded-lg transition-colors group">
+          <div class="w-12 h-12 bg-surface-container rounded-md overflow-hidden flex-shrink-0">
+            <img class="w-full h-full object-cover" src="${p.image_url || 'https://via.placeholder.com/48'}" alt="${p.name}">
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-label-lg text-label-lg text-on-surface truncate">${p.name}</h3>
+            <p class="font-label-sm text-label-sm ${p.stock <= 5 ? 'text-error' : 'text-secondary'}">${p.stock} in stock${p.stock <= 5 ? ' (Low)' : ''}</p>
+          </div>
+          <div class="flex items-center gap-xs opacity-0 group-hover:opacity-100 transition-opacity">
+            <button onclick="openProductModal(${p.id})" class="p-1 text-secondary hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+            <button onclick="deleteProduct(${p.id})" class="p-1 text-secondary hover:text-error transition-colors"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+          </div>
+        </div>
+      `).join('');
+    } catch (e) { console.error('Top products error:', e); }
+  }
+
+  async function loadProducts() {
+    try {
+      const data = await api('/api/products?limit=100');
+      const tbody = document.getElementById('products-table-body');
+      const products = data.products || [];
+      if (!products.length) { tbody.innerHTML = '<tr><td colspan="5" class="p-md text-center text-secondary">No products found.</td></tr>'; return; }
+      tbody.innerHTML = products.map(p => `
+        <tr class="hover:bg-surface-container-low transition-colors">
+          <td class="p-sm">
+            <div class="flex items-center gap-sm">
+              <img class="w-10 h-10 rounded-md object-cover" src="${p.image_url || 'https://via.placeholder.com/40'}" alt="${p.name}">
+              <span class="font-label-lg text-label-lg text-on-surface">${p.name}</span>
+            </div>
+          </td>
+          <td class="p-sm text-secondary">${p.category || '—'}</td>
+          <td class="p-sm text-right font-label-lg">$${parseFloat(p.price).toFixed(2)}</td>
+          <td class="p-sm text-right"><span class="${p.stock <= 5 ? 'text-error' : 'text-on-surface'} font-label-lg">${p.stock}</span></td>
+          <td class="p-sm text-right">
+            <button onclick="openProductModal(${p.id})" class="text-primary hover:underline font-label-sm mr-sm">Edit</button>
+            <button onclick="deleteProduct(${p.id})" class="text-error hover:underline font-label-sm">Delete</button>
+          </td>
+        </tr>
+      `).join('');
+    } catch (e) { console.error('Products error:', e); }
+  }
+
+  // Search filter for products panel
+  document.getElementById('admin-search').addEventListener('input', async function() {
+    if (currentPanel !== 'products') return;
+    const q = this.value.trim();
+    const data = await api(`/api/products?search=${encodeURIComponent(q)}&limit=100`);
+    const products = data.products || [];
+    const tbody = document.getElementById('products-table-body');
+    if (!products.length) { tbody.innerHTML = '<tr><td colspan="5" class="p-md text-center text-secondary">No products match.</td></tr>'; return; }
+    tbody.innerHTML = products.map(p => `
+      <tr class="hover:bg-surface-container-low transition-colors">
+        <td class="p-sm"><div class="flex items-center gap-sm"><img class="w-10 h-10 rounded-md object-cover" src="${p.image_url || 'https://via.placeholder.com/40'}" alt="${p.name}"><span class="font-label-lg text-label-lg text-on-surface">${p.name}</span></div></td>
+        <td class="p-sm text-secondary">${p.category || '—'}</td>
+        <td class="p-sm text-right font-label-lg">$${parseFloat(p.price).toFixed(2)}</td>
+        <td class="p-sm text-right"><span class="${p.stock<=5?'text-error':'text-on-surface'} font-label-lg">${p.stock}</span></td>
+        <td class="p-sm text-right">
+          <button onclick="openProductModal(${p.id})" class="text-primary hover:underline font-label-sm mr-sm">Edit</button>
+          <button onclick="deleteProduct(${p.id})" class="text-error hover:underline font-label-sm">Delete</button>
+        </td>
+      </tr>
+    `).join('');
+  });
+
+  // ─── Product Modal ─────────────────────────────────────────
+  async function openProductModal(productId = null) {
+    editingProductId = productId;
+    document.getElementById('product-form').reset();
+    document.getElementById('product-id').value = '';
+    document.getElementById('modal-title').textContent = productId ? 'Edit Product' : 'Add Product';
+    document.getElementById('modal-submit-btn').textContent = productId ? 'Update Product' : 'Save Product';
+
+    if (productId) {
+      try {
+        const p = await api(`/api/products/${productId}`);
+        document.getElementById('product-id').value = p.id;
+        document.getElementById('p-name').value = p.name;
+        document.getElementById('p-price').value = p.price;
+        document.getElementById('p-stock').value = p.stock;
+        document.getElementById('p-category').value = p.category || 'Apparel';
+        document.getElementById('p-rating').value = p.rating || '';
+        document.getElementById('p-image').value = p.image_url || '';
+        document.getElementById('p-description').value = p.description || '';
+      } catch (e) { Toast.show('Could not load product', 'error'); return; }
+    }
+
+    const overlay = document.getElementById('modal-overlay');
+    overlay.classList.remove('pointer-events-none');
+    requestAnimationFrame(() => { overlay.style.opacity = '1'; });
+  }
+
+  function closeProductModal() {
+    const overlay = document.getElementById('modal-overlay');
+    overlay.style.opacity = '0';
+    setTimeout(() => overlay.classList.add('pointer-events-none'), 200);
+    editingProductId = null;
+  }
+
+  document.getElementById('modal-overlay').addEventListener('click', e => {
+    if (e.target === document.getElementById('modal-overlay')) closeProductModal();
+  });
+
+  async function submitProduct(e) {
+    e.preventDefault();
+    const payload = {
+      name:        document.getElementById('p-name').value.trim(),
+      price:       parseFloat(document.getElementById('p-price').value),
+      stock:       parseInt(document.getElementById('p-stock').value),
+      category:    document.getElementById('p-category').value,
+      rating:      parseFloat(document.getElementById('p-rating').value) || 0,
+      image_url:   document.getElementById('p-image').value.trim(),
+      description: document.getElementById('p-description').value.trim()
+    };
+
+    try {
+      const pid = document.getElementById('product-id').value;
+      if (pid) {
+        await api(`/api/admin/products/${pid}`, 'PUT', payload);
+        Toast.show('Product updated!', 'success');
+      } else {
+        await api('/api/admin/products', 'POST', payload);
+        Toast.show('Product created!', 'success');
+      }
+      closeProductModal();
+      loadTopProducts();
+      if (currentPanel === 'products') loadProducts();
+    } catch (err) { Toast.show(err.message, 'error'); }
+  }
+
+  // ─── Delete Product ────────────────────────────────────────
+  async function deleteProduct(id) {
+    if (!confirm('Are you sure you want to delete this product?')) return;
+    try {
+      await api(`/api/admin/products/${id}`, 'DELETE');
+      Toast.show('Product deleted', 'success');
+      loadTopProducts();
+      if (currentPanel === 'products') loadProducts();
+    } catch (e) { Toast.show(e.message, 'error'); }
+  }
+
+  // ─── Logout ────────────────────────────────────────────────
+  function logout() { Auth.logout(); window.location.href = '/login.html'; }
+  document.getElementById('sidebar-logout').addEventListener('click', logout);
+  document.getElementById('mobile-logout').addEventListener('click', logout);
+
+  // ─── Init ──────────────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', () => {
+    if (!authGuard()) return;
+    loadStats();
+    loadRecentOrders();
+    loadTopProducts();
+  });
+</script>
+</body>
+</html>

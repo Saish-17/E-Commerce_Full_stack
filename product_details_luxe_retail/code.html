@@ -1,0 +1,348 @@
+<!DOCTYPE html><html lang="en" class="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-fixed": "#d3e4fe",
+                        "primary-fixed": "#e0e0ff",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f7f9fb",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary-fixed-variant": "#7b2e12",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-tertiary-fixed": "#390c00",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "outline": "#767683",
+                        "surface-tint": "#4c56af",
+                        "surface-dim": "#d8dadc",
+                        "primary": "#000666",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-secondary-container": "#54647a",
+                        "surface": "#f7f9fb",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#5c1800",
+                        "on-surface-variant": "#454652",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "primary-container": "#1a237e",
+                        "secondary-container": "#d0e1fb",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-container": "#e17c5a",
+                        "on-primary-fixed-variant": "#343d96",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#505f76",
+                        "on-primary-fixed": "#000767",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#8690ee",
+                        "on-surface": "#191c1e",
+                        "surface-container": "#eceef0",
+                        "outline-variant": "#c6c5d4",
+                        "on-error": "#ffffff",
+                        "background": "#f7f9fb",
+                        "on-background": "#191c1e",
+                        "tertiary": "#380b00",
+                        "inverse-primary": "#bdc2ff",
+                        "tertiary-fixed": "#ffdbd0",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "xl": "80px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
+<!-- Top Navigation Bar -->
+<nav class="bg-surface-container-lowest dark:bg-surface-container-lowest text-primary dark:text-primary-fixed font-body-md text-body-md w-full sticky top-0 z-50 border-b border-surface-variant dark:border-outline-variant shadow-sm transition-all duration-200 ease-in-out">
+<div class="max-w-container-max mx-auto px-md flex justify-between items-center h-[80px]">
+<!-- Brand -->
+<a href="#" class="font-display-lg text-display-lg font-bold text-primary dark:text-primary-fixed tracking-tight">
+                LUXE
+            </a>
+<!-- Nav Links (Desktop) -->
+<div class="hidden md:flex space-x-gutter items-center">
+<a href="#" class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed hover:opacity-80 transition-opacity">Home</a>
+<!-- Products is active based on context -->
+<a href="#" class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1 hover:opacity-80 transition-opacity">Products</a>
+<a href="#" class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed hover:opacity-80 transition-opacity">Orders</a>
+</div>
+<!-- Actions -->
+<div class="flex items-center space-x-md">
+<button class="hover:opacity-80 transition-opacity p-2 rounded-full hover:bg-surface-container" aria-label="Search">
+<span class="material-symbols-outlined text-secondary" data-icon="search">search</span>
+</button>
+<button class="hover:opacity-80 transition-opacity p-2 rounded-full hover:bg-surface-container relative" aria-label="Shopping Cart">
+<span class="material-symbols-outlined text-secondary" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute top-1 right-1 bg-primary text-on-primary text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</button>
+<button class="hover:opacity-80 transition-opacity p-2 rounded-full hover:bg-surface-container hidden md:block" aria-label="User Profile">
+<span class="material-symbols-outlined text-secondary" data-icon="person">person</span>
+</button>
+<button class="md:hidden hover:opacity-80 transition-opacity p-2 rounded-full hover:bg-surface-container" aria-label="Menu">
+<span class="material-symbols-outlined text-secondary" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow max-w-container-max mx-auto w-full px-md md:px-margin-desktop py-xl">
+<!-- Breadcrumb -->
+<div class="flex items-center space-x-2 text-label-sm font-label-sm text-secondary mb-lg">
+<a href="#" class="hover:text-primary transition-colors">Home</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a href="#" class="hover:text-primary transition-colors">Products</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a href="#" class="hover:text-primary transition-colors">Accessories</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface">The Meridian Weekender</span>
+</div>
+<!-- Product Hero Section (Grid Layout) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-xl">
+<!-- Gallery (Left - 7 cols) -->
+<div class="lg:col-span-7 flex flex-col md:flex-row-reverse gap-sm">
+<!-- Main Image -->
+<div class="w-full bg-surface-container-low rounded-xl overflow-hidden aspect-[4/5] relative transition-all duration-300 border-2 border-transparent hover:border-primary">
+<img class="w-full h-full object-cover transition-opacity duration-300" data-alt="A high-resolution, professional studio photograph of a luxury leather weekend travel bag. The bag is crafted from deep navy full-grain leather with polished silver hardware. It sits elegantly on a minimalist white pedestal against a soft, seamless light grey background. Bright, high-key studio lighting highlights the texture of the leather and the crisp, modern aesthetic of the brand." id="main-product-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4f4xSkeHHoMnVhSxIqev-ioMRs3laOOvU6duJBI5PpNpp6sdLNVxe5g7J5cArOnsipMAfyyW-6L_VSDdhP0TkxGQTydCO-2RV227Q-LgSsNQyswqGWoADcGT9jr-O1YsZw8IjlWrEF8eu4gni7Me2vxfl4VshGveyNlnJirekI-PtHL1W9hDAZZrExs_ffxiMasfvseBpAWcFJoOVKLWhGSp6G0Idd8rZG5KmjRyCbEesKHeRIW-4BA">
+<button aria-label="Add to Wishlist" class="absolute top-md right-md bg-surface-container-lowest p-2 rounded-full shadow-sm hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<!-- Thumbnails -->
+<div class="flex md:flex-col gap-sm overflow-x-auto no-scrollbar py-2 md:py-0 w-full md:w-[100px] shrink-0">
+<!-- Thumbnail 1 (Active) -->
+<button class="thumbnail-btn border-2 border-primary rounded-lg overflow-hidden shrink-0 w-[80px] h-[100px] bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="Close up thumbnail shot of the luxury navy leather bag's silver buckle and strap detail, perfectly lit in a studio setting, showcasing high-end craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-GclES8OC8mbbA5r2su5lQyVBzhPOj3815WFz0TbhZShGYbfM5t_xkehuT01H6IgO80h6hg0GpVtFyugiD66u9ezicCbTWeAG_yQGBbxvxwviQJIYANxFgO2XQUnWBpgptV6yfwei5bK52xD7znb4K4nd-sEkV4sSQXH6-f5ttCt5oPb5ggvcPC21rJhus8cE_umCyror-FSXQgtUuBxUrGyLghVtkA4u6jlcohC1yDNQ5wHRHQmZgw">
+</button>
+<!-- Thumbnail 2 -->
+<button class="thumbnail-btn border-2 border-transparent hover:border-surface-variant rounded-lg overflow-hidden shrink-0 w-[80px] h-[100px] bg-surface-container-low transition-colors">
+<img class="w-full h-full object-cover" data-alt="Side profile thumbnail of the navy leather weekender bag, showing its structured shape and minimal design, set against a bright, airy background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC22OwfBrF0uqaE8Zp5Iat6EGWbS3I6PHSgwccR-LQwC7iwZuqb8_s6YArqBgs0Mks0giyYc7UmyFWseql6nIAQQXDLvEUThNiUU2cIQrzLyUmsyztO_Y_11Npt1nEg6pAa7Sg4g6f7tPne0hGdXoTDhkfqaViKBEkVTWIugHmxWc0rzhCAbzrv3E_d4DdpOFte6NAdXMw2lgm-t5529A_J1U4_N846bFr-C5t9zm_KDHH3hBWroWl2Kw">
+</button>
+<!-- Thumbnail 3 -->
+<button class="thumbnail-btn border-2 border-transparent hover:border-surface-variant rounded-lg overflow-hidden shrink-0 w-[80px] h-[100px] bg-surface-container-low transition-colors">
+<img class="w-full h-full object-cover" data-alt="Interior thumbnail view of the luxury travel bag revealing a smooth, contrasting light beige lining with a structured organizational pocket." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR-0mHxDjK9XFQyUw8X1m4gIU6hs_vtRsgek_YxpU-drjX2C8bvFPtZMW-wzqk4gdjgp7pnOpq7SrXxG5UoTRD6hkhPxMH7VzqVTTVAtkk2KJQKISFoeuIxTgwSKcJTaFEVLcHLhxutcrhhXGmAIe8i817pK0X7ko7ev6z7qmDvMh17PB_56JsvqsPbK1t3ZYTDcGFEcpMNqt8b3jRgxfl24tkPyNzrwQ5AFwnAJhkUPx-fdTgkWLZYg">
+</button>
+<!-- Thumbnail 4 -->
+<button class="thumbnail-btn border-2 border-transparent hover:border-surface-variant rounded-lg overflow-hidden shrink-0 w-[80px] h-[100px] bg-surface-container-low transition-colors">
+<img class="w-full h-full object-cover" data-alt="Lifestyle thumbnail showing the navy leather weekender bag placed elegantly next to a sleek modern chair in a bright, minimalist architectural space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc4sw18zTEI2tTrCYzCrpkIw6A62DcvV8FR5YtszEjqotTDwYXUAvkNjeqOYEp_rLtRdP6cVD9aB684FsmOVY1EfDLiRBSiOqNNMB_hfUA0gNxw8EcnnHyz8Rf8hEjvcCs2QYyhL8LwXheAccbqgcKood73WZocTieh9Fik-ShuuliIdduvvU2-AfL-QFGuG3-A6xCvu0l-tand0ZodbHImPtzXcwz_Ks_PkVjqYrzhH12f75MqsfXww">
+</button>
+</div>
+</div>
+<!-- Product Info (Right - 5 cols) -->
+<div class="lg:col-span-5 flex flex-col justify-start pt-md lg:pl-md">
+<!-- Badges -->
+<div class="flex items-center space-x-2 mb-sm">
+<span class="px-2 py-1 bg-surface-container text-on-surface text-label-sm font-label-sm uppercase tracking-wider rounded">New Arrival</span>
+<span class="text-label-sm font-label-sm text-secondary flex items-center">
+<span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span> In Stock
+                    </span>
+</div>
+<!-- Title &-->
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">The Meridian Weekender</h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant mb-md">$495.00</p>
+<!-- Reviews Summary -->
+<div class="flex items-center mb-xl">
+<div class="flex text-on-tertiary-container text-[16px]">
+<span class="material-symbols-outlined fill">star</span>
+<span class="material-symbols-outlined fill">star</span>
+<span class="material-symbols-outlined fill">star</span>
+<span class="material-symbols-outlined fill">star</span>
+<span class="material-symbols-outlined">star_half</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary ml-2 underline cursor-pointer hover:text-primary">4.8 (124 reviews)</span>
+</div>
+<hr class="border-t border-surface-variant w-full mb-md">
+<!-- Description -->
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl leading-relaxed">
+                    Designed for the modern traveler, the Meridian Weekender combines minimalist aesthetics with exceptional functionality. Crafted from premium full-grain Italian leather, it features a structured silhouette, water-resistant lining, and a dedicated compartment for your essentials.
+                </p>
+<!-- Color Selection -->
+<div class="mb-lg">
+<p class="font-label-lg text-label-lg text-on-surface mb-sm">Color: <span class="font-normal text-secondary" id="color-label">Deep Navy</span></p>
+<div class="flex space-x-sm">
+<button aria-label="Deep Navy" class="w-10 h-10 rounded-full bg-primary border-2 border-primary ring-2 ring-offset-2 ring-primary-container transition-all"></button>
+<button aria-label="Espresso Brown" class="w-10 h-10 rounded-full bg-[#302B27] border-2 border-transparent hover:border-outline-variant transition-all"></button>
+<button aria-label="Sand" class="w-10 h-10 rounded-full bg-[#E5E0D8] border-2 border-transparent hover:border-outline-variant transition-all"></button>
+</div>
+</div>
+<!-- Quantity & Actions -->
+<div class="flex flex-col space-y-md mt-auto">
+<div class="flex items-center space-x-md">
+<!-- Quantity Selector -->
+<div class="flex items-center border border-outline-variant rounded-lg h-[48px] overflow-hidden bg-surface-container-lowest transition-all duration-300 hover:border-primary">
+<button class="px-4 py-2 text-secondary hover:bg-surface-container hover:text-primary transition-colors h-full flex items-center justify-center" id="qty-minus">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<input class="w-12 text-center font-label-lg text-label-lg text-on-surface border-none focus:ring-0 p-0 h-full" id="qty-input" readonly="" type="text" value="1">
+<button class="px-4 py-2 text-secondary hover:bg-surface-container hover:text-primary transition-colors h-full flex items-center justify-center" id="qty-plus">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col space-y-sm">
+<button class="w-full h-[48px] bg-primary text-on-primary font-label-lg text-label-lg rounded-lg hover:bg-primary-container transition-colors shadow-sm flex items-center justify-center border-2 border-transparent hover:border-primary-fixed">
+                            Add to Cart
+                        </button>
+<button class="w-full h-[48px] bg-surface-container-highest text-on-surface font-label-lg text-label-lg rounded-lg hover:bg-surface-dim transition-colors flex items-center justify-center border-2 border-transparent hover:border-primary transition-all duration-300">
+                            Buy it Now
+                        </button>
+</div>
+</div>
+<!-- Product Features List -->
+<div class="mt-xl border border-surface-variant rounded-lg p-md bg-surface-bright transition-all duration-300 hover:border-primary">
+<ul class="space-y-sm font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary mr-2 text-[20px]">check_circle</span>
+                             Full-grain Italian calfskin leather
+                         </li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary mr-2 text-[20px]">check_circle</span>
+                             Custom matte silver hardware
+                         </li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary mr-2 text-[20px]">check_circle</span>
+                             Complimentary shipping &amp; returns
+                         </li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-high text-on-surface dark:text-on-surface font-body-md text-body-md w-full mt-xl flat no-shadows">
+<div class="max-w-container-max mx-auto px-md py-lg flex flex-col md:flex-row justify-between items-start gap-md">
+<div class="mb-lg md:mb-0">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed mb-sm block" href="#">
+                    LUXE
+                </a>
+<p class="text-secondary dark:text-secondary-fixed-variant text-label-sm font-label-sm">
+                    © 2024 LUXE Retail Group. All rights reserved.
+                </p>
+</div>
+<div class="flex flex-col md:flex-row gap-lg md:gap-xl">
+<div class="flex flex-col space-y-sm">
+<a class="text-secondary dark:text-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:underline transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="text-secondary dark:text-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:underline transition-colors duration-200" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col space-y-sm">
+<a class="text-secondary dark:text-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:underline transition-colors duration-200" href="#">Shipping Info</a>
+<a class="text-secondary dark:text-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:underline transition-colors duration-200" href="#">Contact Us</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Interaction Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Configuration
+            const MAX_QTY = 10;
+            const MIN_QTY = 1;
+
+            // DOM Elements
+            const qtyInput = document.getElementById('qty-input');
+            const btnMinus = document.getElementById('qty-minus');
+            const btnPlus = document.getElementById('qty-plus');
+            const thumbnailBtns = document.querySelectorAll('.thumbnail-btn');
+            const mainImage = document.getElementById('main-product-image');
+
+            // --- UI Functions ---
+
+            // Quantity Selection Logic
+            const updateQuantity = (change) => {
+                let currentQty = parseInt(qtyInput.value);
+                if (isNaN(currentQty)) currentQty = MIN_QTY;
+                
+                let newQty = currentQty + change;
+                
+                if (newQty >= MIN_QTY && newQty <= MAX_QTY) {
+                    qtyInput.value = newQty;
+                }
+            };
+
+            // Gallery Switching Logic
+            const switchMainImage = (thumbnailBtn) => {
+                // Update active state styling
+                thumbnailBtns.forEach(btn => {
+                    btn.classList.remove('border-primary');
+                    btn.classList.add('border-transparent');
+                });
+                thumbnailBtn.classList.remove('border-transparent');
+                thumbnailBtn.classList.add('border-primary');
+
+                // Crossfade effect
+                mainImage.style.opacity = '0';
+                
+                setTimeout(() => {
+                    // Get image from clicked thumbnail
+                    const thumbImg = thumbnailBtn.querySelector('img');
+                    mainImage.src = thumbImg.src;
+                    // Note: In a real app, we might switch to a higher res version here
+                    
+                    mainImage.style.opacity = '1';
+                }, 150); // half of the duration-300 tailwind class
+            };
+
+            // --- Event Listeners ---
+            
+            btnMinus.addEventListener('click', () => updateQuantity(-1));
+            btnPlus.addEventListener('click', () => updateQuantity(1));
+
+            thumbnailBtns.forEach(btn => {
+                btn.addEventListener('click', () => switchMainImage(btn));
+            });
+
+            // --- Backend Integration (Mock) ---
+            /*
+             * Example API Interaction:
+             * GET /api/products/{id}
+             * 
+             * fetch('/api/products/123')
+             *   .then(res => res.json())
+             *   .then(data => {
+             *      // Populate DOM with data.title, data.price, data.description, etc.
+             *      // Build thumbnail gallery dynamically.
+             *   })
+             *   .catch(err => console.error("Failed to load product details", err));
+             */
+        });
+    </script>
+
+</body></html>

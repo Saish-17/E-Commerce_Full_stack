@@ -1,0 +1,510 @@
+<!DOCTYPE html><html lang="en" class="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-fixed": "#d3e4fe",
+                        "primary-fixed": "#e0e0ff",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f7f9fb",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary-fixed-variant": "#7b2e12",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-tertiary-fixed": "#390c00",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "outline": "#767683",
+                        "surface-tint": "#4c56af",
+                        "surface-dim": "#d8dadc",
+                        "primary": "#000666",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-secondary-container": "#54647a",
+                        "surface": "#f7f9fb",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#5c1800",
+                        "on-surface-variant": "#454652",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "primary-container": "#1a237e",
+                        "secondary-container": "#d0e1fb",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-container": "#e17c5a",
+                        "on-primary-fixed-variant": "#343d96",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#505f76",
+                        "on-primary-fixed": "#000767",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#8690ee",
+                        "on-surface": "#191c1e",
+                        "surface-container": "#eceef0",
+                        "outline-variant": "#c6c5d4",
+                        "on-error": "#ffffff",
+                        "background": "#f7f9fb",
+                        "on-background": "#191c1e",
+                        "tertiary": "#380b00",
+                        "inverse-primary": "#bdc2ff",
+                        "tertiary-fixed": "#ffdbd0",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "xl": "80px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-background text-on-background font-body-md antialiased flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<nav class="w-full sticky top-0 z-50 bg-surface-container-lowest dark:bg-surface-container-lowest text-primary dark:text-primary-fixed border-b border-surface-variant dark:border-outline-variant shadow-sm transition-all duration-200 ease-in-out font-body-md">
+<div class="max-w-container-max mx-auto px-md flex justify-between items-center h-[80px]">
+<!-- Logo -->
+<a href="#" class="font-display-lg text-display-lg font-bold text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity">
+                LUXE
+            </a>
+<!-- Desktop Navigation Links -->
+<ul class="hidden md:flex items-center gap-gutter">
+<li class=""><a href="#" class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed hover:opacity-80 transition-opacity">Home</a></li>
+<li class=""><a href="#" class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1 hover:opacity-80 transition-opacity" aria-current="page">Products</a></li>
+<li class=""><a href="#" class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed hover:opacity-80 transition-opacity">Orders</a></li>
+</ul>
+<!-- Trailing Icons -->
+<div class="flex items-center gap-md">
+<button class="hover:opacity-80 transition-opacity text-primary dark:text-primary-fixed flex items-center justify-center p-sm rounded-full hover:bg-surface-container-highest" aria-label="Shopping Cart">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="hover:opacity-80 transition-opacity text-primary dark:text-primary-fixed flex items-center justify-center p-sm rounded-full hover:bg-surface-container-highest" aria-label="User Profile">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden flex items-center justify-center p-sm rounded-full hover:bg-surface-container-highest text-primary" aria-label="Toggle Menu">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-md py-xl flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar (Filters) -->
+<aside class="w-full md:w-64 shrink-0 flex flex-col gap-lg border-r-0 md:border-r border-surface-variant pr-0 md:pr-gutter pb-lg md:pb-0">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-md">Filters</h2>
+</div>
+<!-- Category Filter -->
+<div class="filter-section">
+<h3 class="font-label-lg text-label-lg text-on-surface mb-sm uppercase tracking-wider">Category</h3>
+<ul class="flex flex-col gap-sm">
+<li class="">
+<label class="flex items-center gap-sm cursor-pointer group">
+<input type="checkbox" class="form-checkbox h-5 w-5 text-primary border-outline rounded-sm focus:ring-primary focus:ring-offset-background group-hover:border-primary transition-colors duration-300" value="apparel">
+<span class="text-body-md text-on-surface-variant group-hover:text-on-surface transition-colors">Apparel</span>
+</label>
+</li>
+<li class="">
+<label class="flex items-center gap-sm cursor-pointer group">
+<input type="checkbox" class="form-checkbox h-5 w-5 text-primary border-outline rounded-sm focus:ring-primary focus:ring-offset-background group-hover:border-primary transition-colors duration-300" value="accessories">
+<span class="text-body-md text-on-surface-variant group-hover:text-on-surface transition-colors">Accessories</span>
+</label>
+</li>
+<li class="">
+<label class="flex items-center gap-sm cursor-pointer group">
+<input type="checkbox" class="form-checkbox h-5 w-5 text-primary border-outline rounded-sm focus:ring-primary focus:ring-offset-background group-hover:border-primary transition-colors duration-300" value="footwear">
+<span class="text-body-md text-on-surface-variant group-hover:text-on-surface transition-colors">Footwear</span>
+</label>
+</li>
+</ul>
+</div>
+<!-- Price Range Filter -->
+<div class="filter-section">
+<h3 class="font-label-lg text-label-lg text-on-surface mb-sm uppercase tracking-wider">Price Range</h3>
+<div class="flex items-center gap-sm">
+<div class="relative w-full">
+<span class="absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-label-sm">$</span>
+<input type="number" id="price-min" placeholder="Min" class="w-full form-input pl-xl py-sm bg-surface-container-lowest border-outline rounded-DEFAULT text-body-md focus:border-primary focus:ring-1 focus:ring-primary placeholder-on-surface-variant/50 transition-colors" aria-label="Minimum Price">
+</div>
+<span class="text-on-surface-variant">-</span>
+<div class="relative w-full">
+<span class="absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-label-sm">$</span>
+<input type="number" id="price-max" placeholder="Max" class="w-full form-input pl-xl py-sm bg-surface-container-lowest border-outline rounded-DEFAULT text-body-md focus:border-primary focus:ring-1 focus:ring-primary placeholder-on-surface-variant/50 transition-colors" aria-label="Maximum Price">
+</div>
+</div>
+<button id="apply-price-btn" class="mt-sm w-full bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-lg text-label-lg py-sm rounded-DEFAULT transition-colors border border-transparent hover:border-primary duration-300">Apply</button>
+</div>
+<!-- Rating Filter -->
+<div class="filter-section">
+<h3 class="font-label-lg text-label-lg text-on-surface mb-sm uppercase tracking-wider">Rating</h3>
+<ul class="flex flex-col gap-sm">
+<li class="">
+<label class="flex items-center gap-sm cursor-pointer group">
+<input type="radio" name="rating" class="form-radio h-5 w-5 text-primary border-outline focus:ring-primary focus:ring-offset-background group-hover:border-primary transition-colors" value="4">
+<span class="flex items-center text-on-surface-variant group-hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline text-[20px]" data-icon="star_border">star_border</span>
+<span class="ml-xs text-body-md">&amp; Up</span>
+</span>
+</label>
+</li>
+<li class="">
+<label class="flex items-center gap-sm cursor-pointer group">
+<input type="radio" name="rating" class="form-radio h-5 w-5 text-primary border-outline focus:ring-primary focus:ring-offset-background group-hover:border-primary transition-colors" value="all" checked="">
+<span class="text-body-md text-on-surface-variant group-hover:text-on-surface transition-colors">All Ratings</span>
+</label>
+</li>
+</ul>
+</div>
+<button id="clear-filters-btn" class="text-primary hover:text-primary-container font-label-lg text-label-lg text-left underline underline-offset-4 transition-colors">Clear All Filters</button>
+</aside>
+<!-- Product Listing Area -->
+<section class="flex-grow flex flex-col gap-md">
+<!-- Header & Sorting -->
+<header class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-md pb-md border-b border-surface-variant">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Explore Collection</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Showing <span id="product-count" class="font-bold text-on-surface">12</span> of 48 products</p>
+</div>
+<div class="flex items-center gap-sm">
+<label for="sort-select" class="font-label-lg text-label-lg text-on-surface-variant whitespace-nowrap">Sort by:</label>
+<select id="sort-select" class="form-select bg-surface-container-lowest border-outline rounded-DEFAULT text-body-md text-on-surface py-sm pl-sm pr-xl focus:border-primary focus:ring-1 focus:ring-primary cursor-pointer transition-colors">
+<option value="featured">Featured</option>
+<option value="price-asc">Price: Low to High</option>
+<option value="price-desc">Price: High to Low</option>
+<option value="newest">Newest Arrivals</option>
+</select>
+</div>
+</header>
+<!-- Product Grid -->
+<!-- Bento-ish Grid Layout -->
+<div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter mt-sm">
+<!-- Product Card 1 -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:bg-surface-bright transition-all duration-300 flex flex-col border border-transparent group-hover:border-primary">
+<div class="relative w-full aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img alt="Product Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="A minimalist digital art installation art piece featuring glowing, generative geometric shapes suspended in a vast, minimalist gallery space. The room is illuminated by high-key, soft white lighting that creates a bright, modern light-mode aesthetic. The artwork relies on a sophisticated palette of deep blacks and pristine whites, punctuated by intense accents of vibrant red. The mood is serene yet technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBopCMcIbl8NLDri4YUjwvLhdFcmSFhfH6NZTPlMDpEDrVvA1NISLsmHPFqj_YjkXPKRoSdjcLTQRSsbwX7kY8AR0jGE10w2du_aKzESNfZh9Iuz4EwussZwM1cTDIeVX5oj9zJSFYL2UxBGxtyScDmQR_RvfGv1jt4g4X1-nDoT37rrZwYkuWnKQ3KCt1BHoe0EMGN-BuVeT44VRlwJvmg9XngLnD5PsSNUKzHmgGf_xF4krvIKSLyUA">
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300"></div>
+<button aria-label="Add to wishlist" class="absolute top-sm right-sm p-sm bg-surface-container-lowest/80 backdrop-blur-sm rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-container-lowest transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="favorite_border">favorite_border</span>
+</button>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-xs">Apparel</p>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm line-clamp-1">Structured Wool Coat</h3>
+<div class="flex items-center gap-xs mb-md">
+<span class="material-symbols-outlined text-on-tertiary-container text-[16px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">4.8 (124)</span>
+</div>
+<div class="mt-auto flex items-end justify-between">
+<p class="font-headline-md text-headline-md text-primary">$495.00</p>
+<button class="h-lg px-md bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg rounded-DEFAULT transition-colors flex items-center justify-center gap-xs border border-transparent hover:border-primary-fixed duration-300">
+<span class="">Add</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:bg-surface-bright transition-all duration-300 flex flex-col lg:col-span-2 lg:flex-row border border-transparent group-hover:border-primary">
+<div class="relative w-full lg:w-1/2 aspect-[4/5] lg:aspect-auto bg-surface-container-low overflow-hidden">
+<img alt="Product Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="A striking digital installation art piece featuring glowing, generative geometric shapes suspended in a vast, minimalist gallery space. The room is illuminated by high-key, soft white lighting that creates a bright, modern light-mode aesthetic. The artwork relies on a sophisticated palette of deep blacks and pristine whites, punctuated by intense accents of vibrant red. The mood is serene yet technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTAAvXrrbWnGBqngI3hFTqvMmq8b1lo8-zDM5NQjVvwe0Z-KEsMh9rk1OOSroMIm52WNXSGV_ckBoEap5qxqkpzzkvbRGO80BETj-U0s_v7InW4wAqJYbYaGuE9acdyWJmb26GfAvqdikuMudjB6slaqxo6kBbcaigpSPMt_N9m7Hd2P6zLm35VR89iEoPxu8sVkfCuUwmVmjoBM4S921nwmJrLhK23hLiO8O7dLsEmP7zh9Z1K1zWcw">
+<div class="absolute top-sm left-sm bg-surface-tint text-on-primary font-label-sm text-label-sm px-sm py-xs rounded-sm uppercase tracking-wide">New Arrival</div>
+</div>
+<div class="p-md lg:p-xl flex flex-col justify-center w-full lg:w-1/2">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-xs">Accessories</p>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Classic Leather Tote</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md hidden lg:block line-clamp-3">Crafted from full-grain Italian leather, this versatile tote offers uncompromised durability and a minimalist silhouette perfect for the modern professional. Features a spacious interior and subtle silver-tone hardware.</p>
+<div class="flex items-center gap-xs mb-xl">
+<span class="material-symbols-outlined text-on-tertiary-container text-[16px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">5.0 (89)</span>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<p class="font-display-lg text-display-lg text-primary">$350.00</p>
+<button class="h-lg px-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg rounded-DEFAULT transition-colors flex items-center justify-center border border-transparent hover:border-primary-fixed duration-300">
+                                Add to Cart
+                            </button>
+</div>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:bg-surface-bright transition-all duration-300 flex flex-col border border-transparent group-hover:border-primary">
+<div class="relative w-full aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img alt="Product Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="A minimalist digital art installation art piece featuring glowing, generative geometric shapes suspended in a vast, minimalist gallery space. The room is illuminated by high-key, soft white lighting that creates a bright, modern light-mode aesthetic. The artwork relies on a sophisticated palette of deep blacks and pristine whites, punctuated by intense accents of vibrant red. The mood is serene yet technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGuLtWIx5_Y0sZ4tsFzl1Z9Cd_3O-uNs_gxEmAkLE5obU_llOOsEcXhTJBXg09KF_2xHtb_FeeyO5sKv5oEmaunlRmW3bLlEjwgpTTEiqzLpfQopmacesFSh2bKujf9TAndzDceakvXdHpU04DV1Rlf3KMQ8T9L7FcZxFL0ssGqfzNY6efyWUcpEgkXGSt6QpEHCSs6Rx8seoeexxdDjqrWgS7scpTxFHfk63Ee-6x288lhmD62jWJmw">
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300"></div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-xs">Footwear</p>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm line-clamp-1">Minimalist Sneaker</h3>
+<div class="flex items-center gap-xs mb-md">
+<span class="material-symbols-outlined text-on-tertiary-container text-[16px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">4.5 (210)</span>
+</div>
+<div class="mt-auto flex items-end justify-between">
+<p class="font-headline-md text-headline-md text-primary">$185.00</p>
+<button class="h-lg px-md bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg rounded-DEFAULT transition-colors flex items-center justify-center gap-xs border border-transparent hover:border-primary-fixed duration-300">
+<span class="">Add</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden hover:bg-surface-bright transition-all duration-300 flex flex-col border border-transparent group-hover:border-primary">
+<div class="relative w-full aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img alt="Product Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="A striking digital installation art piece featuring glowing, generative geometric shapes suspended in a vast, minimalist gallery space. The room is illuminated by high-key, soft white lighting that creates a bright, modern light-mode aesthetic. The artwork relies on a sophisticated palette of deep blacks and pristine whites, punctuated by intense accents of vibrant red. The mood is serene yet technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAndKFvsjQn1RWFYzTQ4yvFWkC_8B3GxbG80fiMJkZTtK6Q9FsgtchvpVCHqU9M4Z2ScQuOm9S0TZIpc-Wl_diaL69H07Kd_pbEsHudv5jB-Yjhade2lEudbP8wQh6jArQGukI3hxtnzjeNT7ivjxe-utd-6T_1WLTaFDe36ssxxYB1Walj2t4NAtyOBiXZAI2t7y614inj4ebVeC3YxrA3Hy_8b_20nUPoG0AGQt4xehocmEQ-xOBeaQ">
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300"></div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-xs">Apparel</p>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm line-clamp-1">Cashmere Blend Turtleneck</h3>
+<div class="flex items-center gap-xs mb-md">
+<span class="material-symbols-outlined text-on-tertiary-container text-[16px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">4.9 (56)</span>
+</div>
+<div class="mt-auto flex items-end justify-between">
+<p class="font-headline-md text-headline-md text-primary">$220.00</p>
+<button class="h-lg px-md bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg rounded-DEFAULT transition-colors flex items-center justify-center gap-xs border border-transparent hover:border-primary-fixed duration-300">
+<span class="">Add</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<nav aria-label="Pagination" class="mt-xl flex justify-center items-center gap-sm">
+<button aria-label="Previous Page" class="p-sm flex items-center justify-center text-on-surface-variant hover:text-primary disabled:opacity-50 disabled:cursor-not-allowed transition-colors border border-transparent hover:border-primary duration-300" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<div class="flex items-center gap-xs">
+<button aria-current="page" class="w-10 h-10 flex items-center justify-center rounded-DEFAULT bg-primary text-on-primary font-label-lg text-label-lg transition-colors border border-transparent hover:border-primary duration-300">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-DEFAULT text-on-surface hover:bg-surface-container-high font-label-lg text-label-lg transition-colors border border-transparent hover:border-primary duration-300">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-DEFAULT text-on-surface hover:bg-surface-container-high font-label-lg text-label-lg transition-colors border border-transparent hover:border-primary duration-300">3</button>
+<span class="w-10 h-10 flex items-center justify-center text-on-surface-variant">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-DEFAULT text-on-surface hover:bg-surface-container-high font-label-lg text-label-lg transition-colors border border-transparent hover:border-primary duration-300">8</button>
+</div>
+<button aria-label="Next Page" class="p-sm flex items-center justify-center text-on-surface hover:text-primary transition-colors border border-transparent hover:border-primary duration-300">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</nav>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-xl bg-surface-container dark:bg-surface-container-high text-on-surface dark:text-on-surface font-body-md transition-colors duration-200">
+<div class="max-w-container-max mx-auto px-md py-lg flex flex-col md:flex-row justify-between items-start gap-md">
+<!-- Brand -->
+<div class="flex-shrink-0">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">LUXE</span>
+<p class="mt-xs text-secondary dark:text-secondary-fixed-variant font-body-md text-body-md">© 2024 LUXE Retail Group. All rights reserved.</p>
+</div>
+<!-- Links -->
+<ul class="flex flex-col sm:flex-row flex-wrap gap-md">
+<li class=""><a class="text-secondary dark:text-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-200" href="#">Privacy Policy</a></li>
+<li class=""><a class="text-secondary dark:text-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-200" href="#">Terms of Service</a></li>
+<li class=""><a class="text-secondary dark:text-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-200" href="#">Shipping Info</a></li>
+<li class=""><a class="text-secondary dark:text-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-200" href="#">Contact Us</a></li>
+</ul>
+</div>
+</footer>
+<!-- JavaScript Logic Structure -->
+<script>
+        /**
+         * SECTION: Configuration
+         */
+        const CONFIG = {
+            apiUrl: '/api/products', // API Endpoint for GET /api/products
+            itemsPerPage: 12
+        };
+
+        /**
+         * SECTION: State
+         */
+        let state = {
+            products: [],
+            filters: {
+                categories: [],
+                priceMin: null,
+                priceMax: null,
+                rating: 'all'
+            },
+            sortBy: 'featured',
+            currentPage: 1
+        };
+
+        /**
+         * SECTION: DOM Elements
+         */
+        const DOM = {
+            categoryCheckboxes: document.querySelectorAll('input[value="apparel"], input[value="accessories"], input[value="footwear"]'),
+            priceMinInput: document.getElementById('price-min'),
+            priceMaxInput: document.getElementById('price-max'),
+            applyPriceBtn: document.getElementById('apply-price-btn'),
+            ratingRadios: document.querySelectorAll('input[name="rating"]'),
+            clearFiltersBtn: document.getElementById('clear-filters-btn'),
+            sortSelect: document.getElementById('sort-select'),
+            productGrid: document.getElementById('product-grid'),
+            productCount: document.getElementById('product-count')
+        };
+
+        /**
+         * SECTION: Event Listeners
+         */
+        function setupEventListeners() {
+            // Category Filters
+            DOM.categoryCheckboxes.forEach(cb => {
+                cb.addEventListener('change', handleCategoryChange);
+            });
+
+            // Price Filters
+            DOM.applyPriceBtn.addEventListener('click', handlePriceChange);
+
+            // Rating Filters
+            DOM.ratingRadios.forEach(radio => {
+                radio.addEventListener('change', handleRatingChange);
+            });
+
+            // Sort
+            DOM.sortSelect.addEventListener('change', handleSortChange);
+
+            // Clear Filters
+            DOM.clearFiltersBtn.addEventListener('click', clearAllFilters);
+        }
+
+        /**
+         * SECTION: UI Functions & Handlers
+         */
+        function handleCategoryChange(e) {
+            const value = e.target.value;
+            if (e.target.checked) {
+                if (!state.filters.categories.includes(value)) state.filters.categories.push(value);
+            } else {
+                state.filters.categories = state.filters.categories.filter(c => c !== value);
+            }
+            applyFiltersAndSort();
+        }
+
+        function handlePriceChange() {
+            const min = parseFloat(DOM.priceMinInput.value);
+            const max = parseFloat(DOM.priceMaxInput.value);
+            
+            if (validatePriceInput(min, max)) {
+                state.filters.priceMin = isNaN(min) ? null : min;
+                state.filters.priceMax = isNaN(max) ? null : max;
+                applyFiltersAndSort();
+            }
+        }
+
+        function handleRatingChange(e) {
+            state.filters.rating = e.target.value;
+            applyFiltersAndSort();
+        }
+
+        function handleSortChange(e) {
+            state.sortBy = e.target.value;
+            applyFiltersAndSort();
+        }
+
+        function clearAllFilters() {
+            // Reset UI
+            DOM.categoryCheckboxes.forEach(cb => cb.checked = false);
+            DOM.priceMinInput.value = '';
+            DOM.priceMaxInput.value = '';
+            DOM.ratingRadios.forEach(r => { if(r.value === 'all') r.checked = true; });
+            
+            // Reset State
+            state.filters = { categories: [], priceMin: null, priceMax: null, rating: 'all' };
+            
+            applyFiltersAndSort();
+        }
+
+        function renderProducts(productsToRender) {
+            // In a real app, this would clear DOM.productGrid and generate HTML strings for cards.
+            // For this static mockup, we just update the count to simulate action.
+            DOM.productCount.textContent = productsToRender.length || Math.floor(Math.random() * 40) + 1;
+            console.log("Rendering products based on state:", state);
+        }
+
+        function applyFiltersAndSort() {
+            console.log("Filtering and sorting... (Simulated)");
+            // Simulated logic: Normally you'd filter `state.products` array here based on `state.filters`,
+            // then sort based on `state.sortBy`, and finally call `renderProducts(filteredSortedProducts)`.
+            
+            // Simulating a UI update
+            renderProducts([]);
+        }
+
+        /**
+         * SECTION: Validation
+         */
+        function validatePriceInput(min, max) {
+            if (!isNaN(min) && !isNaN(max) && min > max) {
+                alert("Minimum price cannot be greater than maximum price.");
+                return false;
+            }
+            return true;
+        }
+
+        /**
+         * SECTION: Backend Integration
+         */
+        async function fetchProducts() {
+            try {
+                // Simulated API Call
+                console.log(`Fetching products from ${CONFIG.apiUrl}`);
+                /*
+                const response = await fetch(CONFIG.apiUrl);
+                if (!response.ok) throw new Error('Network response was not ok');
+                const data = await response.json();
+                state.products = data;
+                */
+                // Initial render
+                applyFiltersAndSort();
+            } catch (error) {
+                console.error('Error fetching products:', error);
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            setupEventListeners();
+            fetchProducts();
+        });
+
+    </script>
+
+</body></html>

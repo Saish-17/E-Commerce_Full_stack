@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders - LUXE</title>
+  <meta name="description" content="View and manage your LUXE order history. Track shipments and reorder your favourite luxury items.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    try {
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#ffffff", "surface-container-high": "#e6e8ea",
+              "secondary-fixed": "#d3e4fe", "primary-fixed": "#e0e0ff",
+              "error": "#ba1a1a", "surface-bright": "#f7f9fb",
+              "surface-variant": "#e0e3e5", "error-container": "#ffdad6",
+              "on-secondary-fixed": "#0b1c30", "primary-fixed-dim": "#bdc2ff",
+              "outline": "#767683", "surface-tint": "#4c56af",
+              "surface-dim": "#d8dadc", "primary": "#000666",
+              "surface-container-low": "#f2f4f6", "secondary-fixed-dim": "#b7c8e1",
+              "on-secondary-container": "#54647a", "surface": "#f7f9fb",
+              "surface-container-highest": "#e0e3e5", "on-error-container": "#93000a",
+              "tertiary-container": "#5c1800", "on-surface-variant": "#454652",
+              "inverse-on-surface": "#eff1f3", "on-secondary-fixed-variant": "#38485d",
+              "primary-container": "#1a237e", "secondary-container": "#d0e1fb",
+              "inverse-surface": "#2d3133", "on-tertiary-container": "#e17c5a",
+              "on-primary-fixed-variant": "#343d96", "surface-container-lowest": "#ffffff",
+              "secondary": "#505f76", "on-primary-fixed": "#000767",
+              "tertiary-fixed-dim": "#ffb59d", "on-secondary": "#ffffff",
+              "on-primary-container": "#8690ee", "on-surface": "#191c1e",
+              "surface-container": "#eceef0", "outline-variant": "#c6c5d4",
+              "on-error": "#ffffff", "background": "#f7f9fb",
+              "on-background": "#191c1e", "tertiary": "#380b00",
+              "inverse-primary": "#bdc2ff", "tertiary-fixed": "#ffdbd0",
+              "on-tertiary": "#ffffff"
+            },
+            borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+            spacing: {
+              "gutter": "24px", "margin-desktop": "64px", "xl": "80px",
+              "container-max": "1280px", "base": "8px", "sm": "12px",
+              "xs": "4px", "lg": "48px", "md": "24px"
+            },
+            fontFamily: {
+              "body-lg": ["Inter"], "headline-md": ["Hanken Grotesk"],
+              "display-lg": ["Hanken Grotesk"], "body-md": ["Inter"],
+              "label-lg": ["Inter"], "headline-lg": ["Hanken Grotesk"], "label-sm": ["Inter"]
+            },
+            fontSize: {
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+              "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+              "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+              "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }]
+            }
+          }
+        }
+      };
+    } catch (_e) {}
+  </script>
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    #orders-container { transition: opacity 0.3s ease-in; }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased">
+
+  <!-- Top Nav (injected by main.js) -->
+  <div id="navbar-container"></div>
+
+  <!-- Main Content -->
+  <main class="flex-grow max-w-container-max w-full mx-auto px-md py-xl">
+
+    <!-- Header & Filters -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-lg gap-md">
+      <div>
+        <h1 class="font-headline-lg text-headline-lg text-primary mb-xs">Order History</h1>
+        <p class="font-body-md text-body-md text-secondary">Review and manage your past purchases.</p>
+      </div>
+      <div class="flex gap-sm overflow-x-auto pb-xs hide-scrollbar w-full md:w-auto" id="filter-bar">
+        <button class="filter-btn active px-md py-sm rounded-full border border-primary bg-primary text-on-primary font-label-lg text-label-lg transition-colors whitespace-nowrap duration-200 ease-in-out" data-filter="all">All Orders</button>
+        <button class="filter-btn px-md py-sm rounded-full border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary font-label-lg text-label-lg transition-colors whitespace-nowrap duration-200 ease-in-out" data-filter="processing">Processing</button>
+        <button class="filter-btn px-md py-sm rounded-full border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary font-label-lg text-label-lg transition-colors whitespace-nowrap duration-200 ease-in-out" data-filter="shipped">Shipped</button>
+        <button class="filter-btn px-md py-sm rounded-full border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary font-label-lg text-label-lg transition-colors whitespace-nowrap duration-200 ease-in-out" data-filter="delivered">Delivered</button>
+      </div>
+    </div>
+
+    <!-- Orders Container -->
+    <div id="orders-container" class="flex flex-col gap-lg">
+      <!-- Skeleton loader -->
+      <div class="animate-pulse space-y-lg" id="skeleton">
+        <div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden h-48"></div>
+        <div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden h-48"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full mt-xl bg-surface-container text-on-surface font-body-md text-body-md">
+    <div class="max-w-container-max mx-auto px-md py-lg flex flex-col md:flex-row justify-between items-start gap-md">
+      <div class="font-headline-md text-headline-md font-bold text-primary">LUXE</div>
+      <div class="flex flex-col md:flex-row gap-md md:gap-lg">
+        <a href="#" class="text-secondary hover:text-primary underline transition-colors duration-200">Privacy Policy</a>
+        <a href="#" class="text-secondary hover:text-primary underline transition-colors duration-200">Terms of Service</a>
+        <a href="#" class="text-secondary hover:text-primary underline transition-colors duration-200">Shipping Info</a>
+        <a href="#" class="text-secondary hover:text-primary underline transition-colors duration-200">Contact Us</a>
+      </div>
+      <div class="text-secondary">© 2024 LUXE Retail Group. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script>
+    const STATUS_CONFIG = {
+      delivered:  { label: 'Delivered',  icon: 'check_circle',   colorClass: 'text-on-primary bg-primary' },
+      shipped:    { label: 'Shipped',    icon: 'local_shipping', colorClass: 'text-on-surface-variant bg-surface-variant' },
+      processing: { label: 'Processing', icon: 'pending',        colorClass: 'text-on-surface-variant border border-outline-variant' },
+      cancelled:  { label: 'Cancelled',  icon: 'cancel',         colorClass: 'text-on-error bg-error' }
+    };
+
+    let allOrders = [];
+    let currentFilter = 'all';
+
+    function formatDate(dateStr) {
+      return new Date(dateStr).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    }
+
+    function generateItemsHTML(items) {
+      return (items || []).map((item, i) => `
+        <div class="flex items-center gap-md ${i !== 0 ? 'border-t border-surface-variant pt-md mt-md' : ''}">
+          <div class="w-24 h-24 bg-surface-container flex-shrink-0 rounded-lg overflow-hidden border border-outline-variant/30">
+            <img src="${item.image_url || 'https://via.placeholder.com/96'}" class="w-full h-full object-cover mix-blend-multiply" alt="${item.product_name}">
+          </div>
+          <div class="flex-grow">
+            <h4 class="font-label-lg text-label-lg text-on-surface">${item.product_name}</h4>
+            <p class="font-body-md text-body-md text-secondary mt-xs">Qty: ${item.quantity} &nbsp;&bull;&nbsp; $${parseFloat(item.price).toFixed(2)} each</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function generateOrderHTML(order) {
+      const cfg = STATUS_CONFIG[order.status] || STATUS_CONFIG.processing;
+      const total = parseFloat(order.total_amount || 0).toFixed(2);
+      const date = formatDate(order.created_at);
+      const itemsHTML = generateItemsHTML(order.items);
+
+      return `
+        <article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm transition-shadow hover:shadow-md">
+          <!-- Order Header -->
+          <div class="bg-surface-bright px-lg py-md border-b border-surface-variant flex flex-col md:flex-row justify-between items-start md:items-center gap-md">
+            <div class="flex flex-wrap gap-x-lg gap-y-sm">
+              <div>
+                <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wide">Order Number</p>
+                <p class="font-label-lg text-label-lg text-on-surface mt-xs">#${order.id}</p>
+              </div>
+              <div>
+                <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wide">Date Placed</p>
+                <p class="font-label-lg text-label-lg text-on-surface mt-xs">${date}</p>
+              </div>
+              <div>
+                <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wide">Total Amount</p>
+                <p class="font-label-lg text-label-lg text-on-surface mt-xs">$${total}</p>
+              </div>
+            </div>
+            <!-- Status Badge -->
+            <div class="flex items-center gap-xs px-sm py-xs rounded-full ${cfg.colorClass} font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-[16px]">${cfg.icon}</span>
+              ${cfg.label}
+            </div>
+          </div>
+
+          <!-- Order Items -->
+          <div class="p-lg">${itemsHTML || '<p class="text-secondary font-body-md">No items found.</p>'}</div>
+
+          <!-- Order Footer Actions -->
+          <div class="px-lg py-md bg-surface-bright border-t border-surface-variant flex flex-col sm:flex-row justify-end gap-sm">
+            <a href="/products.html" class="h-[48px] px-lg rounded-DEFAULT font-label-lg text-label-lg border border-outline text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center">
+              Shop Again
+            </a>
+            ${order.status === 'shipped' ? `<button class="h-[48px] px-lg rounded-DEFAULT font-label-lg text-label-lg border border-outline text-on-surface hover:bg-surface-container transition-colors">Track Package</button>` : ''}
+            <button onclick="reOrder(${order.id})" class="h-[48px] px-lg rounded-DEFAULT font-label-lg text-label-lg bg-primary text-on-primary hover:opacity-80 transition-opacity flex items-center justify-center gap-xs">
+              <span class="material-symbols-outlined text-[20px]">sync</span>
+              Order Again
+            </button>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderOrders(filter = 'all') {
+      const container = document.getElementById('orders-container');
+      const filtered = filter === 'all' ? allOrders : allOrders.filter(o => o.status === filter);
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="py-xl text-center flex flex-col items-center gap-md">
+            <span class="material-symbols-outlined text-secondary text-[64px]">receipt_long</span>
+            <p class="font-body-lg text-body-lg text-secondary">No orders found for this status.</p>
+            <a href="/products.html" class="mt-sm h-[48px] px-lg rounded-DEFAULT font-label-lg text-label-lg bg-primary text-on-primary hover:opacity-80 transition-opacity flex items-center gap-xs">
+              <span class="material-symbols-outlined text-[20px]">shopping_bag</span> Browse Products
+            </a>
+          </div>
+        `;
+        return;
+      }
+
+      container.style.opacity = '0';
+      container.innerHTML = filtered.map(generateOrderHTML).join('');
+      setTimeout(() => { container.style.opacity = '1'; }, 50);
+    }
+
+    async function loadOrders() {
+      const token = Auth.getToken();
+      if (!token) {
+        window.location.href = '/login.html?redirect=/orders.html';
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/orders/my-orders', {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        if (!res.ok) throw new Error('Failed to load orders');
+        const data = await res.json();
+        allOrders = data;
+
+        document.getElementById('skeleton')?.remove();
+        renderOrders(currentFilter);
+      } catch (err) {
+        document.getElementById('orders-container').innerHTML = `
+          <div class="py-xl text-center">
+            <p class="font-body-lg text-body-lg text-error">Could not load orders. Please try again.</p>
+          </div>
+        `;
+      }
+    }
+
+    async function reOrder(orderId) {
+      const token = Auth.getToken();
+      if (!token) { window.location.href = '/login.html'; return; }
+
+      const order = allOrders.find(o => o.id === orderId);
+      if (!order || !order.items) return;
+
+      // Add all items from this order back to the cart
+      const cart = Cart.getCart();
+      order.items.forEach(item => {
+        const existing = cart.find(c => c.id === item.product_id);
+        if (existing) existing.quantity += item.quantity;
+        else cart.push({ id: item.product_id, name: item.product_name, price: item.price, image: item.image_url, quantity: item.quantity });
+      });
+      Cart.saveCart(cart);
+      Toast.show('Items added to cart!', 'success');
+      setTimeout(() => window.location.href = '/cart.html', 800);
+    }
+
+    // Filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('bg-primary', 'text-on-primary', 'border-primary');
+          b.classList.add('border-outline-variant', 'text-on-surface-variant');
+        });
+        btn.classList.add('bg-primary', 'text-on-primary', 'border-primary');
+        btn.classList.remove('border-outline-variant', 'text-on-surface-variant');
+        currentFilter = btn.dataset.filter;
+        renderOrders(currentFilter);
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', loadOrders);
+  </script>
+</body>
+</html>

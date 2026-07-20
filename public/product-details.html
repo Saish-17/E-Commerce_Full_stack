@@ -1,0 +1,378 @@
+<!DOCTYPE html><html lang="en" class="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-fixed": "#d3e4fe",
+                        "primary-fixed": "#e0e0ff",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f7f9fb",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary-fixed-variant": "#7b2e12",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-tertiary-fixed": "#390c00",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "outline": "#767683",
+                        "surface-tint": "#4c56af",
+                        "surface-dim": "#d8dadc",
+                        "primary": "#000666",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-secondary-container": "#54647a",
+                        "surface": "#f7f9fb",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#5c1800",
+                        "on-surface-variant": "#454652",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "primary-container": "#1a237e",
+                        "secondary-container": "#d0e1fb",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-container": "#e17c5a",
+                        "on-primary-fixed-variant": "#343d96",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#505f76",
+                        "on-primary-fixed": "#000767",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#8690ee",
+                        "on-surface": "#191c1e",
+                        "surface-container": "#eceef0",
+                        "outline-variant": "#c6c5d4",
+                        "on-error": "#ffffff",
+                        "background": "#f7f9fb",
+                        "on-background": "#191c1e",
+                        "tertiary": "#380b00",
+                        "inverse-primary": "#bdc2ff",
+                        "tertiary-fixed": "#ffdbd0",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "xl": "80px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-background text-on-background font-body-md antialiased flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<nav class="w-full sticky top-0 z-50 bg-surface-container-lowest text-primary border-b border-surface-variant shadow-sm font-body-md">
+<div class="max-w-container-max mx-auto px-md flex justify-between items-center h-[80px]">
+<a href="/index.html" class="font-display-lg text-display-lg font-bold text-primary hover:opacity-80 transition-opacity">LUXE</a>
+<div class="hidden md:flex space-x-gutter items-center">
+<a href="/index.html" class="text-secondary hover:text-primary hover:opacity-80 transition-opacity">Home</a>
+<a href="/products.html" class="text-primary font-bold border-b-2 border-primary pb-1 hover:opacity-80 transition-opacity">Products</a>
+</div>
+<div class="flex items-center space-x-md">
+<button class="hover:opacity-80 transition-opacity p-2 rounded-full hover:bg-surface-container" aria-label="Shopping Cart">
+<span class="material-symbols-outlined text-secondary">shopping_cart</span>
+</button>
+<button class="hover:opacity-80 transition-opacity p-2 rounded-full hover:bg-surface-container" aria-label="User Profile">
+<span class="material-symbols-outlined text-secondary">person</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow max-w-container-max mx-auto w-full px-md md:px-margin-desktop py-xl">
+<!-- Breadcrumb -->
+<div class="flex items-center space-x-2 text-label-sm font-label-sm text-secondary mb-lg">
+<a href="/index.html" class="hover:text-primary transition-colors">Home</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a href="/products.html" class="hover:text-primary transition-colors">Products</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a href="#" id="breadcrumb-category" class="hover:text-primary transition-colors">Category</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface" id="breadcrumb-title">Product Name</span>
+</div>
+<!-- Product Hero Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-xl">
+<!-- Gallery -->
+<div class="lg:col-span-7 flex flex-col md:flex-row-reverse gap-sm">
+<!-- Main Image -->
+<div class="w-full bg-surface-container-low rounded-xl overflow-hidden aspect-[4/5] relative border-2 border-transparent">
+<img class="w-full h-full object-cover transition-opacity duration-300" id="main-product-image" src="" alt="Main Product Image">
+<button onclick="showToast('Added to wishlist', 'success')" aria-label="Add to Wishlist" class="absolute top-md right-md bg-surface-container-lowest p-2 rounded-full shadow-sm hover:text-error transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<!-- Thumbnails -->
+<div class="flex md:flex-col gap-sm overflow-x-auto no-scrollbar py-2 md:py-0 w-full md:w-[100px] shrink-0" id="thumbnail-gallery-container">
+<!-- Active thumbnail will be set dynamically -->
+</div>
+</div>
+<!-- Product Info -->
+<div class="lg:col-span-5 flex flex-col justify-start pt-md lg:pl-md">
+<!-- Badges -->
+<div class="flex items-center space-x-2 mb-sm">
+<span class="px-2 py-1 bg-surface-container text-on-surface text-label-sm font-label-sm uppercase tracking-wider rounded">Signature Piece</span>
+<span class="text-label-sm font-label-sm text-secondary flex items-center" id="stock-badge">
+<span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span> In Stock
+</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-2" id="product-title">Loading product...</h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant mb-md" id="product-price">$0.00</p>
+<!-- Reviews Summary -->
+<div class="flex items-center mb-xl">
+<div class="flex text-on-tertiary-container text-[16px]" id="stars-container">
+<!-- stars -->
+</div>
+<span class="text-label-sm font-label-sm text-secondary ml-2 underline cursor-pointer hover:text-primary" id="reviews-count">0 reviews</span>
+</div>
+<hr class="border-t border-surface-variant w-full mb-md">
+<!-- Description -->
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl leading-relaxed" id="product-desc">
+                    Loading description...
+                </p>
+<!-- Quantity & Actions -->
+<div class="flex flex-col space-y-md mt-auto">
+<div class="flex items-center space-x-md">
+<div class="flex items-center border border-outline-variant rounded-lg h-[48px] overflow-hidden bg-surface-container-lowest transition-all duration-300 hover:border-primary">
+<button class="px-4 py-2 text-secondary hover:bg-surface-container hover:text-primary transition-colors h-full flex items-center justify-center" id="qty-minus">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<input class="w-12 text-center font-label-lg text-label-lg text-on-surface border-none focus:ring-0 p-0 h-full" id="qty-input" readonly="" type="text" value="1">
+<button class="px-4 py-2 text-secondary hover:bg-surface-container hover:text-primary transition-colors h-full flex items-center justify-center" id="qty-plus">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col space-y-sm">
+<button id="add-to-cart-btn" class="w-full h-[48px] bg-primary text-on-primary font-label-lg text-label-lg rounded-lg hover:bg-primary-container transition-colors shadow-sm flex items-center justify-center border-2 border-transparent hover:border-primary-fixed">
+                            Add to Cart
+                        </button>
+<button id="buy-now-btn" class="w-full h-[48px] bg-surface-container-highest text-on-surface font-label-lg text-label-lg rounded-lg hover:bg-surface-dim transition-colors flex items-center justify-center border-2 border-transparent hover:border-primary transition-all duration-300">
+                            Buy it Now
+                        </button>
+</div>
+</div>
+<!-- Features -->
+<div class="mt-xl border border-surface-variant rounded-lg p-md bg-surface-bright transition-all duration-300 hover:border-primary">
+<ul class="space-y-sm font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary mr-2 text-[20px]">check_circle</span>
+                             Premium handcrafted materials
+                         </li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary mr-2 text-[20px]">check_circle</span>
+                             Designed in accordance with minimalism
+                         </li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary mr-2 text-[20px]">check_circle</span>
+                             Complimentary shipping &amp; returns
+                         </li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-high text-on-surface dark:text-on-surface font-body-md text-body-md w-full mt-xl flat no-shadows">
+<div class="max-w-container-max mx-auto px-md py-lg flex flex-col md:flex-row justify-between items-start gap-md">
+<div class="mb-lg md:mb-0">
+<a class="font-headline-md text-headline-md font-bold text-primary mb-sm block" href="/index.html">LUXE</a>
+<p class="text-secondary text-label-sm font-label-sm">© 2024 LUXE Retail Group. All rights reserved.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-lg md:gap-xl">
+<div class="flex flex-col space-y-sm">
+<a class="text-secondary hover:text-primary hover:underline transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="text-secondary hover:text-primary hover:underline transition-colors duration-200" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col space-y-sm">
+<a class="text-secondary hover:text-primary hover:underline transition-colors duration-200" href="#">Shipping Info</a>
+<a class="text-secondary hover:text-primary hover:underline transition-colors duration-200" href="#">Contact Us</a>
+</div>
+</div>
+</div>
+</footer>
+<script src="/js/main.js"></script>
+<script>
+        let currentProduct = null;
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const qtyInput = document.getElementById('qty-input');
+            const btnMinus = document.getElementById('qty-minus');
+            const btnPlus = document.getElementById('qty-plus');
+            const addToCartBtn = document.getElementById('add-to-cart-btn');
+            const buyNowBtn = document.getElementById('buy-now-btn');
+
+            // Parse ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            if (!productId) {
+                window.location.href = '/products.html';
+                return;
+            }
+
+            // Fetch Product Details
+            try {
+                const response = await fetch(`/api/products/${productId}`);
+                if (!response.ok) {
+                    throw new Error('Product not found');
+                }
+                currentProduct = await response.json();
+                populateProductDetails(currentProduct);
+            } catch (err) {
+                console.error(err);
+                showToast('Product not found or error loading details.', 'error');
+                setTimeout(() => window.location.href = '/products.html', 1500);
+                return;
+            }
+
+            // Quantity Selection
+            const MAX_QTY = currentProduct ? currentProduct.count_in_stock : 10;
+            const MIN_QTY = 1;
+
+            btnMinus.addEventListener('click', () => {
+                let currentQty = parseInt(qtyInput.value);
+                if (currentQty > MIN_QTY) qtyInput.value = currentQty - 1;
+            });
+
+            btnPlus.addEventListener('click', () => {
+                let currentQty = parseInt(qtyInput.value);
+                if (currentQty < MAX_QTY) qtyInput.value = currentQty + 1;
+                else showToast(`Cannot order more than available stock (${MAX_QTY})`, 'warning');
+            });
+
+            // Add to Cart
+            addToCartBtn.addEventListener('click', () => {
+                if (currentProduct) {
+                    const qty = parseInt(qtyInput.value);
+                    Cart.add(currentProduct, qty);
+                }
+            });
+
+            // Buy Now
+            buyNowBtn.addEventListener('click', () => {
+                if (currentProduct) {
+                    const qty = parseInt(qtyInput.value);
+                    // Add item to cart
+                    Cart.add(currentProduct, qty);
+                    // Redirect to cart or checkout
+                    setTimeout(() => {
+                        window.location.href = '/checkout.html';
+                    }, 500);
+                }
+            });
+        });
+
+        function populateProductDetails(product) {
+            document.getElementById('breadcrumb-category').textContent = product.category;
+            document.getElementById('breadcrumb-category').href = `/products.html?category=${product.category}`;
+            document.getElementById('breadcrumb-title').textContent = product.name;
+            
+            document.getElementById('main-product-image').src = product.image_url;
+            document.getElementById('main-product-image').alt = product.name;
+
+            document.getElementById('product-title').textContent = product.name;
+            document.getElementById('product-price').textContent = `$${product.price.toFixed(2)}`;
+            document.getElementById('product-desc').textContent = product.description;
+
+            // Stock badge
+            const stockBadge = document.getElementById('stock-badge');
+            if (product.count_in_stock > 0) {
+                stockBadge.innerHTML = `<span class="w-2 h-2 rounded-full bg-green-500 mr-2 inline-block"></span> In Stock (${product.count_in_stock} units)`;
+            } else {
+                stockBadge.innerHTML = `<span class="w-2 h-2 rounded-full bg-red-500 mr-2 inline-block"></span> Out of Stock`;
+                document.getElementById('add-to-cart-btn').disabled = true;
+                document.getElementById('add-to-cart-btn').classList.add('opacity-50', 'cursor-not-allowed');
+                document.getElementById('buy-now-btn').disabled = true;
+                document.getElementById('buy-now-btn').classList.add('opacity-50', 'cursor-not-allowed');
+            }
+
+            // Reviews Summary
+            const starsContainer = document.getElementById('stars-container');
+            starsContainer.innerHTML = '';
+            
+            const rating = product.rating || 0;
+            const fullStars = Math.floor(rating);
+            const hasHalf = rating % 1 >= 0.5;
+            
+            for (let i = 0; i < 5; i++) {
+                if (i < fullStars) {
+                    starsContainer.innerHTML += `<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>`;
+                } else if (i === fullStars && hasHalf) {
+                    starsContainer.innerHTML += `<span class="material-symbols-outlined text-primary">star_half</span>`;
+                } else {
+                    starsContainer.innerHTML += `<span class="material-symbols-outlined text-outline">star_border</span>`;
+                }
+            }
+
+            document.getElementById('reviews-count').textContent = `${product.rating} (${product.num_reviews} reviews)`;
+
+            // Thumbnails
+            const thumbContainer = document.getElementById('thumbnail-gallery-container');
+            // Since we only have one image, let's display 3 thumbnails:
+            // 1. Same product image (active)
+            // 2-3. Fallback generic product images to create a luxury gallery vibe
+            const extraThumbs = [
+                product.image_url,
+                'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=400',
+                'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=400'
+            ];
+
+            thumbContainer.innerHTML = extraThumbs.map((url, i) => `
+                <button class="thumbnail-btn border-2 ${i === 0 ? 'border-primary' : 'border-transparent'} rounded-lg overflow-hidden shrink-0 w-[80px] h-[100px] bg-surface-container-low transition-colors" onclick="switchGalleryImage(this, '${url}')">
+                    <img class="w-full h-full object-cover" src="${url}" alt="Thumbnail ${i + 1}">
+                </button>
+            `).join('');
+        }
+
+        function switchGalleryImage(btn, url) {
+            const mainImg = document.getElementById('main-product-image');
+            
+            // Update active outline
+            const buttons = document.querySelectorAll('.thumbnail-btn');
+            buttons.forEach(b => {
+                b.classList.remove('border-primary');
+                b.classList.add('border-transparent');
+            });
+            btn.classList.remove('border-transparent');
+            btn.classList.add('border-primary');
+
+            // Crossfade
+            mainImg.style.opacity = '0';
+            setTimeout(() => {
+                mainImg.src = url;
+                mainImg.style.opacity = '1';
+            }, 150);
+        }
+    </script>
+</body></html>

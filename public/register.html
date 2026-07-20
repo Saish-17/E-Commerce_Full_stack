@@ -1,0 +1,472 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#e6e8ea",
+                    "secondary-fixed": "#d3e4fe",
+                    "primary-fixed": "#e0e0ff",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#f7f9fb",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary-fixed-variant": "#7b2e12",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-tertiary-fixed": "#390c00",
+                    "primary-fixed-dim": "#bdc2ff",
+                    "outline": "#767683",
+                    "surface-tint": "#4c56af",
+                    "surface-dim": "#d8dadc",
+                    "primary": "#000666",
+                    "surface-container-low": "#f2f4f6",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-secondary-container": "#54647a",
+                    "surface": "#f7f9fb",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#5c1800",
+                    "on-surface-variant": "#454652",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "primary-container": "#1a237e",
+                    "secondary-container": "#d0e1fb",
+                    "inverse-surface": "#2d3133",
+                    "on-tertiary-container": "#e17c5a",
+                    "on-primary-fixed-variant": "#343d96",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#505f76",
+                    "on-primary-fixed": "#000767",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#8690ee",
+                    "on-surface": "#191c1e",
+                    "surface-container": "#eceef0",
+                    "outline-variant": "#c6c5d4",
+                    "on-error": "#ffffff",
+                    "background": "#f7f9fb",
+                    "on-background": "#191c1e",
+                    "tertiary": "#380b00",
+                    "inverse-primary": "#bdc2ff",
+                    "tertiary-fixed": "#ffdbd0",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "xl": "80px",
+                    "container-max": "1280px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "lg": "48px",
+                    "md": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": [
+                            "Inter", "sans-serif"
+                    ],
+                    "headline-md": [
+                            "Hanken Grotesk", "sans-serif"
+                    ],
+                    "display-lg": [
+                            "Hanken Grotesk", "sans-serif"
+                    ],
+                    "body-md": [
+                            "Inter", "sans-serif"
+                    ],
+                    "label-lg": [
+                            "Inter", "sans-serif"
+                    ],
+                    "headline-lg": [
+                            "Hanken Grotesk", "sans-serif"
+                    ],
+                    "label-sm": [
+                            "Inter", "sans-serif"
+                    ]
+            },
+            "fontSize": {
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-lg": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+          },
+        }
+      }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased">
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center py-xl px-gutter relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none -z-10" style="background-image: radial-gradient(circle at 10% 20%, rgba(208, 225, 251, 0.4) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(238, 241, 243, 0.8) 0%, transparent 40%);"></div>
+<div class="w-full max-w-[1000px] bg-surface-container-lowest rounded-xl shadow-sm border border-surface-variant flex flex-col md:flex-row overflow-hidden relative z-10 min-h-[600px]">
+<!-- Left Side - Imagery / Branding -->
+<div class="hidden md:block md:w-1/2 relative bg-surface-container-low p-md flex flex-col justify-between">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-80 mix-blend-multiply filter grayscale-[20%]" data-alt="Minimalist luxury retail branding" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_F-SN78Vv23iswfpwbUA_tIZ2LMbiiBUS-aNBfJU_xLwMu3E0aaTi0CZaMA6lD4Vt8hvGRak4Ci2md0W-Uy1ImDufygE83I5WD_ZC7SVPq-Gau2gTpFP10feNyaq55YbBxHO3o-9iAN74qydzQMbJQv2dqFj8Uyk0Vs7NNlhSzot0LFCPCkqklNj09B8ju0LVnTrUO0BmjbZs3rqnQ4_wRzcY-3urMY3LISixjQ1eTt-TwQdMTO7_9w">
+</div>
+<div class="relative z-10 p-md bg-surface-container-lowest/80 backdrop-blur-sm rounded-lg border border-surface-variant inline-block max-w-max">
+<h1 class="font-display-lg text-display-lg font-bold text-primary tracking-tight">LUXE</h1>
+</div>
+<div class="relative z-10 mt-auto bg-surface-container-lowest/90 backdrop-blur-md p-md rounded-lg border border-surface-variant max-w-[80%] shadow-[0_4px_24px_rgba(0,6,102,0.05)]">
+<p class="font-headline-md text-headline-md text-on-surface mb-sm">Elevate your lifestyle.</p>
+<p class="font-body-md text-body-md text-secondary">Join an exclusive community of discerning individuals who value refined simplicity and uncompromised quality.</p>
+</div>
+</div>
+<!-- Right Side - Registration Form -->
+<div class="w-full md:w-1/2 p-xl flex flex-col justify-center bg-surface-container-lowest">
+<div class="mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Create Account</h2>
+<p class="font-body-md text-body-md text-secondary">Enter your details to begin your journey.</p>
+</div>
+<form class="flex flex-col gap-md" id="registrationForm" novalidate="">
+<!-- Full Name -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="fullName">Full Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">person</span>
+<input class="form-input w-full h-lg pl-[40px] pr-sm bg-surface-container-lowest border border-outline-variant rounded text-body-md text-on-surface transition-colors duration-200 placeholder:text-outline-variant hover:border-primary duration-300" id="fullName" name="fullName" placeholder="Jane Doe" required="" type="text">
+</div>
+<span class="font-label-sm text-label-sm text-error hidden" id="fullNameError">Please enter your full name.</span>
+</div>
+<!-- Email -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">mail</span>
+<input class="form-input w-full h-lg pl-[40px] pr-sm bg-surface-container-lowest border border-outline-variant rounded text-body-md text-on-surface transition-colors duration-200 placeholder:text-outline-variant hover:border-primary duration-300" id="email" name="email" placeholder="jane@example.com" required="" type="email">
+</div>
+<span class="font-label-sm text-label-sm text-error hidden" id="emailError">Please enter a valid email address.</span>
+</div>
+<!-- Password -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="password">Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">lock</span>
+<input class="form-input w-full h-lg pl-[40px] pr-[40px] bg-surface-container-lowest border border-outline-variant rounded text-body-md text-on-surface transition-colors duration-200 placeholder:text-outline-variant hover:border-primary duration-300" id="password" name="password" placeholder="••••••••" required="" type="password">
+<button aria-label="Toggle password visibility" class="absolute right-sm top-1/2 -translate-y-1/2 text-outline-variant hover:text-on-surface transition-colors p-1" id="togglePassword" type="button">
+<span class="material-symbols-outlined" id="togglePasswordIcon">visibility_off</span>
+</button>
+</div>
+<!-- Password Strength Indicator -->
+<div class="flex gap-1 mt-1 h-1 w-full" id="passwordStrengthContainer">
+<div class="flex-1 bg-surface-variant rounded-full transition-colors duration-300" id="strengthBar1"></div>
+<div class="flex-1 bg-surface-variant rounded-full transition-colors duration-300" id="strengthBar2"></div>
+<div class="flex-1 bg-surface-variant rounded-full transition-colors duration-300" id="strengthBar3"></div>
+<div class="flex-1 bg-surface-variant rounded-full transition-colors duration-300" id="strengthBar4"></div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary mt-1" id="passwordFeedback">Must be at least 8 characters.</span>
+<span class="font-label-sm text-label-sm text-error hidden" id="passwordError">Password does not meet requirements.</span>
+</div>
+<!-- Confirm Password -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="confirmPassword">Confirm Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">lock_reset</span>
+<input class="form-input w-full h-lg pl-[40px] pr-sm bg-surface-container-lowest border border-outline-variant rounded text-body-md text-on-surface transition-colors duration-200 placeholder:text-outline-variant hover:border-primary duration-300" id="confirmPassword" name="confirmPassword" placeholder="••••••••" required="" type="password">
+</div>
+<span class="font-label-sm text-label-sm text-error hidden" id="confirmPasswordError">Passwords do not match.</span>
+</div>
+<!-- Terms of Service -->
+<div class="flex items-start gap-sm mt-sm">
+<div class="relative flex items-center h-5">
+<input class="w-4 h-4 border border-outline-variant rounded bg-surface-container-lowest text-primary focus:ring-primary focus:ring-offset-0 transition-colors duration-200 cursor-pointer appearance-none checked:bg-primary checked:border-primary relative before:content-[''] before:absolute before:hidden before:w-[4px] before:h-[8px] before:border-r-2 before:border-b-2 before:border-white before:rotate-45 before:left-[5px] before:top-[2px] checked:before:block hover:border-primary duration-300" id="terms" name="terms" required="" type="checkbox">
+</div>
+<label class="font-body-md text-body-md text-secondary cursor-pointer leading-tight" for="terms">
+                            I agree to the <a class="text-primary hover:underline font-semibold" href="#">Terms of Service</a> and <a class="text-primary hover:underline font-semibold" href="#">Privacy Policy</a>.
+                        </label>
+</div>
+<span class="font-label-sm text-label-sm text-error hidden mt-[-8px]" id="termsError">You must accept the terms.</span>
+<!-- Submit Button -->
+<button class="h-lg w-full bg-primary text-on-primary font-label-lg text-label-lg rounded flex items-center justify-center gap-sm hover:bg-primary-container transition-colors duration-200 mt-sm disabled:opacity-50 disabled:cursor-not-allowed border border-transparent hover:border-primary-fixed-dim duration-300" id="submitBtn" type="submit">
+<span class="">Create Account</span>
+<span class="material-symbols-outlined text-[20px]" id="submitIcon">arrow_forward</span>
+<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white hidden" fill="none" id="loadingSpinner" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+</svg>
+</button>
+<!-- Login Link -->
+<div class="text-center mt-sm">
+<span class="font-body-md text-body-md text-secondary">Already have an account?</span>
+<a class="font-label-lg text-label-lg text-primary hover:underline ml-xs" href="/login.html">Log in here</a>
+</div>
+</form>
+</div>
+</div>
+</main>
+<footer class="bg-surface-container dark:bg-surface-container-high w-full mt-xl flat">
+<div class="max-w-container-max mx-auto px-md py-lg flex flex-col md:flex-row justify-between items-start gap-md">
+<div>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">LUXE</span>
+<p class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-variant mt-xs">© 2024 LUXE Retail Group. All rights reserved.</p>
+</div>
+<nav class="flex flex-wrap gap-md">
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-200" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-200" href="#">Shipping Info</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-200" href="#">Contact Us</a>
+</nav>
+</div>
+</footer>
+<script src="/js/main.js"></script>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('registrationForm');
+            const fullNameInput = document.getElementById('fullName');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+            const termsCheckbox = document.getElementById('terms');
+            const submitBtn = document.getElementById('submitBtn');
+            const submitIcon = document.getElementById('submitIcon');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const togglePasswordBtn = document.getElementById('togglePassword');
+            const togglePasswordIcon = document.getElementById('togglePasswordIcon');
+            
+            const fullNameError = document.getElementById('fullNameError');
+            const emailError = document.getElementById('emailError');
+            const passwordError = document.getElementById('passwordError');
+            const confirmPasswordError = document.getElementById('confirmPasswordError');
+            const termsError = document.getElementById('termsError');
+            
+            const strengthBars = [
+                document.getElementById('strengthBar1'),
+                document.getElementById('strengthBar2'),
+                document.getElementById('strengthBar3'),
+                document.getElementById('strengthBar4')
+            ];
+            const passwordFeedback = document.getElementById('passwordFeedback');
+
+            const isValidEmail = (email) => {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(String(email).toLowerCase());
+            };
+
+            const checkPasswordStrength = (password) => {
+                let strength = 0;
+                let feedback = [];
+                if (password.length >= 8) strength += 1;
+                else feedback.push("At least 8 chars");
+                if (password.match(/(?=.*[a-z])(?=.*[A-Z])/)) strength += 1;
+                else feedback.push("Upper & lowercase");
+                if (password.match(/(?=.*\d)/)) strength += 1;
+                else feedback.push("Number");
+                if (password.match(/(?=.*[!@#$%^&*])/)) strength += 1;
+                else feedback.push("Special char");
+                return { strength, feedback };
+            };
+
+            const updatePasswordUI = (password) => {
+                if (password.length === 0) {
+                    strengthBars.forEach(bar => {
+                        bar.className = 'flex-1 bg-surface-variant rounded-full transition-colors duration-300';
+                    });
+                    passwordFeedback.textContent = "Must be at least 8 characters.";
+                    passwordFeedback.className = "font-label-sm text-label-sm text-secondary mt-1";
+                    return;
+                }
+                const { strength, feedback } = checkPasswordStrength(password);
+                strengthBars.forEach(bar => {
+                    bar.className = 'flex-1 bg-surface-variant rounded-full transition-colors duration-300';
+                });
+                let colorClass = 'bg-error';
+                if (strength === 2) colorClass = 'bg-[#f59e0b]';
+                if (strength === 3) colorClass = 'bg-primary-container';
+                if (strength === 4) colorClass = 'bg-primary';
+                for (let i = 0; i < strength; i++) {
+                    strengthBars[i].className = `flex-1 ${colorClass} rounded-full transition-colors duration-300`;
+                }
+                if (strength === 4) {
+                    passwordFeedback.textContent = "Strong password.";
+                    passwordFeedback.className = "font-label-sm text-label-sm text-primary mt-1";
+                } else {
+                    passwordFeedback.textContent = "Add: " + feedback.join(", ");
+                    passwordFeedback.className = "font-label-sm text-label-sm text-secondary mt-1";
+                }
+            };
+
+            const setError = (input, errorElement, message) => {
+                input.classList.add('border-error');
+                errorElement.textContent = message;
+                errorElement.classList.remove('hidden');
+            };
+
+            const clearError = (input, errorElement) => {
+                input.classList.remove('border-error');
+                errorElement.classList.add('hidden');
+            };
+
+            const validateFullName = () => {
+                if (fullNameInput.value.trim() === '') {
+                    setError(fullNameInput, fullNameError, 'Full name is required.');
+                    return false;
+                }
+                clearError(fullNameInput, fullNameError);
+                return true;
+            };
+
+            const validateEmail = () => {
+                const val = emailInput.value.trim();
+                if (val === '') {
+                    setError(emailInput, emailError, 'Email is required.');
+                    return false;
+                } else if (!isValidEmail(val)) {
+                    setError(emailInput, emailError, 'Please enter a valid email.');
+                    return false;
+                }
+                clearError(emailInput, emailError);
+                return true;
+            };
+
+            const validatePassword = () => {
+                const val = passwordInput.value;
+                const { strength } = checkPasswordStrength(val);
+                if (val === '') {
+                    setError(passwordInput, passwordError, 'Password is required.');
+                    return false;
+                } else if (strength < 2) {
+                    setError(passwordInput, passwordError, 'Password is too weak.');
+                    return false;
+                }
+                clearError(passwordInput, passwordError);
+                return true;
+            };
+
+            const validateConfirmPassword = () => {
+                if (confirmPasswordInput.value === '') {
+                    setError(confirmPasswordInput, confirmPasswordError, 'Please confirm password.');
+                    return false;
+                } else if (confirmPasswordInput.value !== passwordInput.value) {
+                    setError(confirmPasswordInput, confirmPasswordError, 'Passwords do not match.');
+                    return false;
+                }
+                clearError(confirmPasswordInput, confirmPasswordError);
+                return true;
+            };
+
+            const validateTerms = () => {
+                if (!termsCheckbox.checked) {
+                    termsError.classList.remove('hidden');
+                    return false;
+                }
+                termsError.classList.add('hidden');
+                return true;
+            };
+
+            togglePasswordBtn.addEventListener('click', () => {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                togglePasswordIcon.textContent = type === 'password' ? 'visibility_off' : 'visibility';
+            });
+
+            passwordInput.addEventListener('input', (e) => {
+                updatePasswordUI(e.target.value);
+                if(!passwordError.classList.contains('hidden')) validatePassword();
+                if(confirmPasswordInput.value !== '') validateConfirmPassword();
+            });
+
+            fullNameInput.addEventListener('input', () => { if(!fullNameError.classList.contains('hidden')) validateFullName(); });
+            emailInput.addEventListener('input', () => { if(!emailError.classList.contains('hidden')) validateEmail(); });
+            confirmPasswordInput.addEventListener('input', () => { if(!confirmPasswordError.classList.contains('hidden')) validateConfirmPassword(); });
+            termsCheckbox.addEventListener('change', () => { if(!termsError.classList.contains('hidden')) validateTerms(); });
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const isNameValid = validateFullName();
+                const isEmailValid = validateEmail();
+                const isPasswordValid = validatePassword();
+                const isConfirmValid = validateConfirmPassword();
+                const isTermsValid = validateTerms();
+
+                if (isNameValid && isEmailValid && isPasswordValid && isConfirmValid && isTermsValid) {
+                    submitBtn.disabled = true;
+                    submitIcon.classList.add('hidden');
+                    loadingSpinner.classList.remove('hidden');
+
+                    try {
+                        const response = await fetch('/api/auth/register', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                name: fullNameInput.value,
+                                email: emailInput.value,
+                                password: passwordInput.value
+                            })
+                        });
+
+                        const data = await response.json();
+
+                        if (!response.ok) {
+                            throw new Error(data.message || 'Registration failed.');
+                        }
+
+                        showToast('Account created successfully! Redirecting to sign in...', 'success');
+                        setTimeout(() => {
+                            window.location.href = '/login.html';
+                        }, 1500);
+
+                    } catch (err) {
+                        showToast(err.message, 'error');
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitIcon.classList.remove('hidden');
+                        loadingSpinner.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body></html>

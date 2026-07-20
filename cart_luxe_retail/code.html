@@ -1,0 +1,230 @@
+<!DOCTYPE html><html lang="en" class="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Hanken+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-fixed": "#d3e4fe",
+                        "primary-fixed": "#e0e0ff",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f7f9fb",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary-fixed-variant": "#7b2e12",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-tertiary-fixed": "#390c00",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "outline": "#767683",
+                        "surface-tint": "#4c56af",
+                        "surface-dim": "#d8dadc",
+                        "primary": "#000666",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-secondary-container": "#54647a",
+                        "surface": "#f7f9fb",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#5c1800",
+                        "on-surface-variant": "#454652",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "primary-container": "#1a237e",
+                        "secondary-container": "#d0e1fb",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-container": "#e17c5a",
+                        "on-primary-fixed-variant": "#343d96",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#505f76",
+                        "on-primary-fixed": "#000767",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#8690ee",
+                        "on-surface": "#191c1e",
+                        "surface-container": "#eceef0",
+                        "outline-variant": "#c6c5d4",
+                        "on-error": "#ffffff",
+                        "background": "#f7f9fb",
+                        "on-background": "#191c1e",
+                        "tertiary": "#380b00",
+                        "inverse-primary": "#bdc2ff",
+                        "tertiary-fixed": "#ffdbd0",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "xl": "80px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="w-full sticky top-0 z-50 bg-surface-container-lowest border-b border-surface-variant shadow-sm transition-all duration-200 ease-in-out">
+<div class="max-w-container-max mx-auto px-md flex justify-between items-center h-[80px]">
+<a href="#" class="font-display-lg text-display-lg font-bold text-primary">LUXE</a>
+<div class="hidden md:flex gap-md">
+<a href="#" class="text-secondary hover:text-primary hover:opacity-80 transition-opacity font-body-md text-body-md">Home</a>
+<a href="#" class="text-secondary hover:text-primary hover:opacity-80 transition-opacity font-body-md text-body-md">Products</a>
+<a href="#" class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md">Orders</a>
+</div>
+<div class="flex gap-sm">
+<button class="p-2 text-primary hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="p-2 text-primary hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow max-w-container-max mx-auto w-full px-md py-xl">
+<h1 class="font-headline-lg text-headline-lg mb-lg">Your Cart</h1>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Cart Items List -->
+<div class="lg:col-span-8 flex flex-col gap-md" id="cart-items-container">
+<!-- Item 1 -->
+<div class="flex flex-col sm:flex-row gap-md bg-surface-container-lowest p-md rounded-lg shadow-sm border border-surface-variant relative transition-all duration-200 hover:border-primary">
+<div class="w-full sm:w-32 h-32 flex-shrink-0 bg-surface-container-low rounded">
+<img alt="Product Image" class="w-full h-full object-cover rounded" data-alt="A sleek, minimalist black leather weekender bag sitting on a pristine white marble surface. Studio lighting highlights the premium texture and silver hardware. Corporate modern aesthetic, high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUdU2NAVGAxivcXWaC5qEr8q9-xyvfTqAG5sxyY2clI1nE5j1TENPyVZtapTtLvizz9WEkeapgnJzQACFL_zmkwSv8lzQjWQYcyBiMHWUSzNNaCCd2Kxr3cb4eeRpKwXwpOmpnwD6hTMBaVteWomefww6uPQv0bjwCXICYY_9hrJxTRmtnV5DmoZtNUPJODJRCJ2a9eBchcTjioH-o8SWjXISPixoxPUirhHO36PdTzUAONbNHbcFZSA">
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md">Midnight Weekender</h3>
+<p class="text-secondary font-body-md text-body-md mt-1">Color: Onyx Black</p>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="flex items-center border border-outline rounded transition-colors duration-200 hover:border-primary">
+<button aria-label="Decrease quantity" class="px-3 py-1 text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<span class="px-3 py-1 font-label-lg text-label-lg border-l border-r border-outline">1</span>
+<button aria-label="Increase quantity" class="px-3 py-1 text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<span class="font-headline-md text-headline-md text-primary">$450.00</span>
+</div>
+</div>
+<button aria-label="Remove item" class="absolute top-4 right-4 text-secondary hover:text-error transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col sm:flex-row gap-md bg-surface-container-lowest p-md rounded-lg shadow-sm border border-surface-variant relative transition-all duration-200 hover:border-primary">
+<div class="w-full sm:w-32 h-32 flex-shrink-0 bg-surface-container-low rounded">
+<img alt="Product Image" class="w-full h-full object-cover rounded" data-alt="A sophisticated matte silver mechanical watch resting on a dark slate background. Minimalist dial design with sharp, clean lines. Corporate luxury aesthetic, soft dramatic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtG_yg3bIaLWbRwl-szCrtB7KAn9kJt5MDgpR3Fg7g3c4nohoAMXxd6LjjVA4ogs02kgsJLrbE1EnYRnVipi_VAXwStaSlzIQcy7wQ7ZbIhWzB-mUN4EZRWAXCyy5VBGvB44K04cYVfoqb3XeUjVmrDSFALkKv9x2_PYdcy89hKxzxpzwZgY6t9w7A7M3s4TDGgFuAMeRKqBikz2eXx5dj-F2HH-c4TkiPpSgrV1uwumn5DExunni8RQ">
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md">The Architect Watch</h3>
+<p class="text-secondary font-body-md text-body-md mt-1">Material: Titanium</p>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="flex items-center border border-outline rounded transition-colors duration-200 hover:border-primary">
+<button aria-label="Decrease quantity" class="px-3 py-1 text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<span class="px-3 py-1 font-label-lg text-label-lg border-l border-r border-outline">2</span>
+<button aria-label="Increase quantity" class="px-3 py-1 text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<span class="font-headline-md text-headline-md text-primary">$890.00</span>
+</div>
+</div>
+<button aria-label="Remove item" class="absolute top-4 right-4 text-secondary hover:text-error transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+<!-- -->
+<div class="lg:col-span-4">
+<div class="bg-surface-container p-md rounded-lg sticky top-[100px]">
+<h2 class="font-headline-md text-headline-md mb-md border-b border-outline-variant pb-sm">Order Summary</h2>
+<div class="flex flex-col gap-sm mb-md font-body-md text-body-md">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Subtotal</span>
+<span class="font-medium" id="summary-subtotal">$1,340.00</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Estimated Shipping</span>
+<span class="font-medium text-primary" id="summary-shipping">Calculated at checkout</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Tax</span>
+<span class="font-medium" id="summary-tax">$0.00</span>
+</div>
+</div>
+<!-- Promo Code -->
+<div class="mb-lg">
+<label class="block font-label-sm text-label-sm text-secondary mb-xs" for="promo">Promo Code</label>
+<div class="flex gap-2">
+<input class="flex-grow rounded border border-outline focus:border-primary focus:ring-1 focus:ring-primary px-3 py-2 font-body-md text-body-md bg-surface-container-lowest transition-colors duration-200 hover:border-primary" id="promo" placeholder="Enter code" type="text">
+<button class="px-4 py-2 bg-surface-variant text-on-surface rounded font-label-lg text-label-lg hover:bg-surface-dim transition-colors border border-transparent hover:border-primary">Apply</button>
+</div>
+</div>
+<div class="flex justify-between items-center border-t border-outline-variant pt-md mb-lg">
+<span class="font-headline-md text-headline-md">Total</span>
+<span class="font-headline-lg text-headline-lg text-primary" id="summary-total">$1,340.00</span>
+</div>
+<button class="w-full h-lg bg-primary text-on-primary rounded font-label-lg text-label-lg flex items-center justify-center hover:opacity-90 transition-opacity">
+                        Proceed to Checkout
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-xl bg-surface-container">
+<div class="max-w-container-max mx-auto px-md py-lg flex flex-col md:flex-row justify-between items-start gap-md">
+<div>
+<span class="font-headline-md text-headline-md font-bold text-primary">LUXE</span>
+<p class="font-body-md text-body-md text-secondary mt-2">© 2024 LUXE Retail Group. All rights reserved.</p>
+</div>
+<div class="flex flex-col gap-2 font-body-md text-body-md">
+<a class="text-secondary hover:text-primary underline transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="text-secondary hover:text-primary underline transition-colors duration-200" href="#">Terms of Service</a>
+<a class="text-secondary hover:text-primary underline transition-colors duration-200" href="#">Shipping Info</a>
+<a class="text-secondary hover:text-primary underline transition-colors duration-200" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+<script class="">
+        // JS logic for basic UI interactions would go here
+    </script>
+
+</body></html>

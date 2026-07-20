@@ -1,0 +1,539 @@
+<!DOCTYPE html><html lang="en" class="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-fixed": "#d3e4fe",
+                        "primary-fixed": "#e0e0ff",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f7f9fb",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary-fixed-variant": "#7b2e12",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-tertiary-fixed": "#390c00",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "outline": "#767683",
+                        "surface-tint": "#4c56af",
+                        "surface-dim": "#d8dadc",
+                        "primary": "#000666",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-secondary-container": "#54647a",
+                        "surface": "#f7f9fb",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#5c1800",
+                        "on-surface-variant": "#454652",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "primary-container": "#1a237e",
+                        "secondary-container": "#d0e1fb",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-container": "#e17c5a",
+                        "on-primary-fixed-variant": "#343d96",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#505f76",
+                        "on-primary-fixed": "#000767",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#8690ee",
+                        "on-surface": "#191c1e",
+                        "surface-container": "#eceef0",
+                        "outline-variant": "#c6c5d4",
+                        "on-error": "#ffffff",
+                        "background": "#f7f9fb",
+                        "on-background": "#191c1e",
+                        "tertiary": "#380b00",
+                        "inverse-primary": "#bdc2ff",
+                        "tertiary-fixed": "#ffdbd0",
+                        "on-tertiary": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "xl": "80px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "md": "24px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Inter"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                        "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }]
+                    }
+                }
+            }
+        };
+    }catch(_e){}</script><style>
+        .step-hidden { display: none; }
+    </style><meta charset="utf-8"></head><body class="bg-background text-on-background antialiased min-h-screen flex flex-col">
+<!-- Header -->
+<header class="w-full bg-surface-container-lowest border-b border-surface-variant py-md px-md sticky top-0 z-50">
+<div class="max-w-container-max mx-auto flex justify-between items-center h-[48px]">
+<a href="/index.html" class="font-display-lg text-display-lg font-bold text-primary flex items-center gap-sm hover:opacity-80 transition-opacity">LUXE</a>
+<a href="/cart.html" class="font-label-lg text-label-lg text-secondary flex items-center gap-xs hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+                Secure Checkout
+            </a>
+</div>
+</header>
+<main class="flex-grow max-w-container-max mx-auto w-full px-md py-margin-desktop md:py-xl grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Checkout Steps -->
+<div class="md:col-span-8 space-y-md">
+<!-- Step Indicators -->
+<div class="flex items-center justify-between mb-xl relative">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[1px] bg-outline-variant -z-10"></div>
+<!-- Step 1 Indicator -->
+<div class="flex flex-col items-center gap-sm bg-background px-sm" id="indicator-1">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-lg text-label-lg shadow-sm transition-colors duration-300">1</div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wide">Shipping</span>
+</div>
+<!-- Step 2 Indicator -->
+<div class="flex flex-col items-center gap-sm bg-background px-sm" id="indicator-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-lg text-label-lg transition-colors duration-300">2</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Payment</span>
+</div>
+<!-- Step 3 Indicator -->
+<div class="flex flex-col items-center gap-sm bg-background px-sm" id="indicator-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-lg text-label-lg transition-colors duration-300">3</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide">Review</span>
+</div>
+</div>
+<!-- Step 1: Shipping Address -->
+<section id="step-1" class="bg-surface-container-lowest p-xl rounded-xl shadow-sm border border-outline-variant/30">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-lg">Shipping Address</h2>
+<form id="form-shipping" class="space-y-md" onsubmit="event.preventDefault(); checkoutApp.nextStep();">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs" for="firstName">First Name</label>
+<input type="text" id="firstName" required class="w-full h-lg bg-surface px-md border border-outline rounded-DEFAULT font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all hover:border-primary/50">
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs" for="lastName">Last Name</label>
+<input type="text" id="lastName" required class="w-full h-lg bg-surface px-md border border-outline rounded-DEFAULT font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all hover:border-primary/50">
+</div>
+</div>
+<div class="">
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs" for="address">Street Address</label>
+<input type="text" id="address" required class="w-full h-lg bg-surface px-md border border-outline rounded-DEFAULT font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all hover:border-primary/50">
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="md:col-span-2">
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs" for="city">City</label>
+<input type="text" id="city" required class="w-full h-lg bg-surface px-md border border-outline rounded-DEFAULT font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all hover:border-primary/50">
+</div>
+<div class="">
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs" for="zip">Postal Code</label>
+<input type="text" id="zip" required class="w-full h-lg bg-surface px-md border border-outline rounded-DEFAULT font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all hover:border-primary/50">
+</div>
+</div>
+<div class="pt-md mt-md border-t border-surface-variant flex justify-end">
+<button type="submit" class="h-lg px-xl bg-primary text-on-primary font-label-lg text-label-lg rounded-DEFAULT hover:opacity-90 transition-opacity flex items-center justify-center gap-sm hover:shadow-md">
+                            Continue to Payment
+                            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</form>
+</section>
+<!-- Step 2: Payment Method -->
+<section id="step-2" class="step-hidden bg-surface-container-lowest p-xl rounded-xl shadow-sm border border-outline-variant/30">
+<div class="flex items-center gap-sm mb-lg">
+<button type="button" onclick="checkoutApp.prevStep()" class="text-secondary hover:text-primary transition-colors flex items-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="font-headline-md text-headline-md text-on-surface">Payment Method</h2>
+</div>
+<form id="form-payment" class="space-y-md" onsubmit="event.preventDefault(); checkoutApp.nextStep();">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-lg">
+<label class="relative flex cursor-pointer p-md border border-primary bg-primary/5 rounded-lg transition-all items-center gap-md">
+<input type="radio" name="payment_method" value="credit_card" checked class="text-primary focus:ring-primary h-4 w-4 border-outline hover:border-primary/50">
+<span class="material-symbols-outlined text-primary text-[28px]">credit_card</span>
+<span class="font-label-lg text-label-lg text-on-surface flex-grow">Credit Card</span>
+</label>
+<label class="relative flex cursor-pointer p-md border border-outline bg-surface rounded-lg hover:border-primary/50 transition-all items-center gap-md">
+<input type="radio" name="payment_method" value="paypal" class="text-primary focus:ring-primary h-4 w-4 border-outline hover:border-primary/50">
+<span class="material-symbols-outlined text-secondary text-[28px]">account_balance_wallet</span>
+<span class="font-label-lg text-label-lg text-on-surface flex-grow">Digital Wallet</span>
+</label>
+</div>
+<div class="space-y-md">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs" for="cardName">Name on Card</label>
+<input type="text" id="cardName" required class="w-full h-lg bg-surface px-md border border-outline rounded-DEFAULT font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all hover:border-primary/50">
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs" for="cardNumber">Card Number</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">credit_card</span>
+<input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" required class="w-full h-lg bg-surface pl-[48px] pr-md border border-outline rounded-DEFAULT font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-mono hover:border-primary/50">
+</div>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs" for="expiry">Expiry (MM/YY)</label>
+<input type="text" id="expiry" placeholder="MM/YY" required class="w-full h-lg bg-surface px-md border border-outline rounded-DEFAULT font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-mono hover:border-primary/50">
+</div>
+<div class="">
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs" for="cvv">CVV</label>
+<input type="text" id="cvv" placeholder="123" required class="w-full h-lg bg-surface px-md border border-outline rounded-DEFAULT font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-mono hover:border-primary/50">
+</div>
+</div>
+</div>
+<div class="pt-md mt-md border-t border-surface-variant flex justify-end">
+<button type="submit" class="h-lg px-xl bg-primary text-on-primary font-label-lg text-label-lg rounded-DEFAULT hover:opacity-90 transition-opacity flex items-center justify-center gap-sm">
+                            Review Order
+                            <span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</form>
+</section>
+<!-- Step 3: Order Review -->
+<section id="step-3" class="step-hidden bg-surface-container-lowest p-xl rounded-xl shadow-sm border border-outline-variant/30">
+<div class="flex items-center gap-sm mb-lg">
+<button type="button" onclick="checkoutApp.prevStep()" class="text-secondary hover:text-primary transition-colors flex items-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="font-headline-md text-headline-md text-on-surface">Review Order</h2>
+</div>
+<div class="space-y-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="p-md bg-surface rounded-lg border border-outline-variant">
+<h3 class="font-label-lg text-label-lg text-on-surface mb-sm flex justify-between items-center">
+                                Shipping Details
+                                <button type="button" onclick="checkoutApp.goToStep(1)" class="text-primary font-label-sm text-label-sm underline hover:opacity-80">Edit</button>
+</h3>
+<div class="font-body-md text-body-md text-on-surface-variant" id="review-shipping">
+<!-- Populated by JS -->
+</div>
+</div>
+<div class="p-md bg-surface rounded-lg border border-outline-variant">
+<h3 class="font-label-lg text-label-lg text-on-surface mb-sm flex justify-between items-center">
+                                Payment Method
+                                <button type="button" onclick="checkoutApp.goToStep(2)" class="text-primary font-label-sm text-label-sm underline hover:opacity-80">Edit</button>
+</h3>
+<div class="font-body-md text-body-md text-on-surface-variant flex items-center gap-sm" id="review-payment">
+<span class="material-symbols-outlined text-outline">credit_card</span>
+                                Card ending in <span id="review-card-last4" class="font-mono text-on-surface">****</span>
+</div>
+</div>
+</div>
+<div class="pt-xl border-t border-surface-variant">
+<button type="button" onclick="checkoutApp.submitOrder()" id="btn-place-order" class="w-full h-[64px] bg-primary text-on-primary font-label-lg text-[16px] rounded-DEFAULT hover:opacity-95 transition-all flex items-center justify-center gap-sm shadow-md">
+<span class="material-symbols-outlined">lock</span>
+                            Place Order - <span id="btn-order-total">$0.00</span>
+</button>
+<p class="text-center font-label-sm text-label-sm text-secondary mt-sm">By placing this order, you agree to our Terms of Service.</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Order Summary Sidebar -->
+<aside class="md:col-span-4">
+<div class="sticky top-[100px] bg-surface-container-lowest p-lg rounded-xl shadow-sm border border-outline-variant/50">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-md pb-sm border-b border-surface-variant">Order Summary</h2>
+<!-- Items -->
+<div class="space-y-md mb-lg" id="checkout-sidebar-items">
+<!-- Dynamically populated -->
+</div>
+<!-- Totals -->
+<div class="space-y-sm pt-md border-t border-surface-variant font-body-md text-body-md">
+<div class="flex justify-between text-on-surface-variant">
+<span class="">Subtotal</span>
+<span id="checkout-subtotal">$0.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span class="">Shipping</span>
+<span class="text-primary font-bold">FREE</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span class="">Tax</span>
+<span id="checkout-tax">$0.00</span>
+</div>
+<div class="flex justify-between items-center pt-md mt-sm border-t border-outline-variant/30 font-headline-md text-headline-md text-on-surface">
+<span class="">Total</span>
+<span id="checkout-total">$0.00</span>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<footer class="w-full mt-xl bg-surface-container">
+<div class="max-w-container-max mx-auto px-md py-lg flex flex-col md:flex-row justify-between items-start gap-md">
+<div>
+<span class="font-headline-md text-headline-md font-bold text-primary">LUXE</span>
+<p class="font-body-md text-body-md text-secondary mt-2">© 2024 LUXE Retail Group. All rights reserved.</p>
+</div>
+<div class="flex flex-col gap-2 font-body-md text-body-md">
+<a class="text-secondary hover:text-primary underline transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="text-secondary hover:text-primary underline transition-colors duration-200" href="#">Terms of Service</a>
+<a class="text-secondary hover:text-primary underline transition-colors duration-200" href="#">Shipping Info</a>
+<a class="text-secondary hover:text-primary underline transition-colors duration-200" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+<script src="/js/main.js"></script>
+<script>
+        const checkoutApp = (function() {
+            const TOTAL_STEPS = 3;
+            let currentStep = 1;
+
+            const elements = {
+                steps: [
+                    document.getElementById('step-1'),
+                    document.getElementById('step-2'),
+                    document.getElementById('step-3')
+                ],
+                indicators: [
+                    document.getElementById('indicator-1'),
+                    document.getElementById('indicator-2'),
+                    document.getElementById('indicator-3')
+                ],
+                forms: {
+                    shipping: document.getElementById('form-shipping'),
+                    payment: document.getElementById('form-payment')
+                },
+                review: {
+                    shipping: document.getElementById('review-shipping'),
+                    payment: document.getElementById('review-payment'),
+                    cardLast4: document.getElementById('review-card-last4')
+                },
+                btnPlaceOrder: document.getElementById('btn-place-order')
+            };
+
+            function updateUI() {
+                elements.steps.forEach((stepEl, index) => {
+                    if (index + 1 === currentStep) {
+                        stepEl.classList.remove('step-hidden');
+                        stepEl.style.opacity = 0;
+                        setTimeout(() => {
+                            stepEl.style.transition = 'opacity 0.3s ease';
+                            stepEl.style.opacity = 1;
+                        }, 50);
+                    } else {
+                        stepEl.classList.add('step-hidden');
+                    }
+                });
+
+                elements.indicators.forEach((indEl, index) => {
+                    const stepNum = index + 1;
+                    const circle = indEl.querySelector('div');
+                    const text = indEl.querySelector('span');
+                    
+                    if (stepNum === currentStep) {
+                        circle.className = 'w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-lg text-label-lg shadow-sm transition-colors duration-300';
+                        text.className = 'font-label-sm text-label-sm text-primary uppercase tracking-wide';
+                    } else if (stepNum < currentStep) {
+                        circle.className = 'w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center font-label-lg text-label-lg transition-colors duration-300';
+                        circle.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span>';
+                        text.className = 'font-label-sm text-label-sm text-secondary uppercase tracking-wide';
+                    } else {
+                        circle.className = 'w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-lg text-label-lg transition-colors duration-300';
+                        circle.innerHTML = stepNum;
+                        text.className = 'font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wide';
+                    }
+                });
+
+                if (currentStep === 3) {
+                    populateReviewData();
+                }
+            }
+
+            function populateReviewData() {
+                const fName = document.getElementById('firstName').value || '';
+                const lName = document.getElementById('lastName').value || '';
+                const address = document.getElementById('address').value || '';
+                const city = document.getElementById('city').value || '';
+                const zip = document.getElementById('zip').value || '';
+                
+                elements.review.shipping.innerHTML = `
+                    ${fName} ${lName}<br>
+                    ${address}<br>
+                    ${city}, ${zip}
+                `;
+
+                const payMethod = document.querySelector('input[name="payment_method"]:checked').value;
+                if (payMethod === 'paypal') {
+                    elements.review.payment.innerHTML = `
+                        <span class="material-symbols-outlined text-outline">account_balance_wallet</span>
+                        <span>Digital Wallet Payment</span>
+                    `;
+                } else {
+                    const cardNum = document.getElementById('cardNumber').value || '0000';
+                    const last4 = cardNum.replace(/\s+/g, '').slice(-4);
+                    elements.review.payment.innerHTML = `
+                        <span class="material-symbols-outlined text-outline">credit_card</span>
+                        <span>Card ending in <span class="font-mono text-on-surface">${last4.padStart(4, '*')}</span></span>
+                    `;
+                }
+            }
+
+            function validateStep(step) {
+                if (step === 1) {
+                    return elements.forms.shipping.checkValidity();
+                }
+                if (step === 2) {
+                    const payMethod = document.querySelector('input[name="payment_method"]:checked').value;
+                    if (payMethod === 'paypal') {
+                        // Bypass card validation for paypal
+                        return true;
+                    }
+                    return elements.forms.payment.checkValidity();
+                }
+                return true;
+            }
+
+            return {
+                nextStep: function() {
+                    if (validateStep(currentStep) && currentStep < TOTAL_STEPS) {
+                        currentStep++;
+                        updateUI();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        if(currentStep === 1) elements.forms.shipping.reportValidity();
+                        if(currentStep === 2) elements.forms.payment.reportValidity();
+                    }
+                },
+                prevStep: function() {
+                    if (currentStep > 1) {
+                        currentStep--;
+                        updateUI();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                },
+                goToStep: function(step) {
+                    if (step < currentStep) {
+                        currentStep = step;
+                        updateUI();
+                    }
+                },
+                submitOrder: async function() {
+                    const btn = elements.btnPlaceOrder;
+                    btn.disabled = true;
+                    btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span> Placing Order...`;
+                    btn.classList.add('opacity-80');
+
+                    try {
+                        const cart = Cart.get();
+                        const address = `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}, ${document.getElementById('address').value}, ${document.getElementById('city').value}, ${document.getElementById('zip').value}`;
+                        const payMethod = document.querySelector('input[name="payment_method"]:checked').value;
+
+                        const response = await fetch('/api/orders', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${Auth.getToken()}`
+                            },
+                            body: JSON.stringify({
+                                shippingAddress: address,
+                                paymentMethod: payMethod === 'credit_card' ? 'Credit Card' : 'Paypal',
+                                items: cart.map(item => ({
+                                    productId: item.id,
+                                    quantity: item.quantity
+                                }))
+                            })
+                        });
+
+                        const data = await response.json();
+
+                        if (!response.ok) {
+                            throw new Error(data.message || 'Order failed');
+                        }
+
+                        // Success
+                        btn.innerHTML = `<span class="material-symbols-outlined">check_circle</span> Order Confirmed!`;
+                        btn.classList.replace('bg-primary', 'bg-surface-tint');
+                        
+                        Cart.clear();
+                        showToast('Order successfully placed!', 'success');
+                        
+                        setTimeout(() => {
+                            window.location.href = '/orders.html';
+                        }, 1500);
+
+                    } catch (err) {
+                        showToast(err.message, 'error');
+                        btn.disabled = false;
+                        btn.innerHTML = `<span class="material-symbols-outlined">lock</span> Place Order`;
+                        btn.classList.remove('opacity-80');
+                    }
+                }
+            };
+        })();
+
+        // Load Sidebar Data
+        document.addEventListener('DOMContentLoaded', () => {
+            // Auth check
+            if (!Auth.isLoggedIn()) {
+                window.location.href = '/login.html';
+                return;
+            }
+
+            const cart = Cart.get();
+            if (cart.length === 0) {
+                window.location.href = '/cart.html';
+                return;
+            }
+
+            const container = document.getElementById('checkout-sidebar-items');
+            let subtotal = 0;
+
+            container.innerHTML = cart.map(item => {
+                const totalItemPrice = item.price * item.quantity;
+                subtotal += totalItemPrice;
+
+                return `
+                    <div class="flex gap-md items-start p-xs rounded-lg bg-surface-container-low border border-transparent">
+                        <div class="w-[60px] h-[80px] bg-surface-container-high rounded flex-shrink-0 overflow-hidden">
+                            <img class="w-full h-full object-cover" src="${item.image_url}" alt="${item.name}">
+                        </div>
+                        <div class="flex-grow min-w-0">
+                            <h4 class="font-label-lg text-label-lg text-on-surface truncate">${item.name}</h4>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Qty: ${item.quantity}</p>
+                        </div>
+                        <div class="font-label-lg text-label-lg text-on-surface whitespace-nowrap">
+                            $${totalItemPrice.toFixed(2)}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('checkout-subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('checkout-total').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('btn-order-total').textContent = `$${subtotal.toFixed(2)}`;
+            
+            // Auto-fill Name details from localStorage user profile if available
+            const user = Auth.getUser();
+            if (user && user.name) {
+                const names = user.name.split(' ');
+                if (names[0]) document.getElementById('firstName').value = names[0];
+                if (names[1]) document.getElementById('lastName').value = names[1];
+            }
+        });
+    </script>
+</body></html>
