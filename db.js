@@ -190,6 +190,16 @@ const initializeDatabase = async () => {
                 count_in_stock: 30
             },
             {
+                name: 'Silk Cashmere Scarf',
+                description: 'An ultra-soft scarf woven from silk and cashmere for a luxe layer that adds warmth and polish to every ensemble.',
+                price: 145.00,
+                category: 'Accessories',
+                image_url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBopCMcIbl8NLDri4YUjwvLhdFcmSFhfH6NZTPlMDpEDrVvA1NISLsmHPFqj_YjkXPKRoSdjcLTQRSsbwX7kY8AR0jGE10w2du_aKzESNfZh9Iuz4EwussZwM1cTDIeVX5oj9zJSFYL2UxBGxtyScDmQR_RvfGv1jt4g4X1-nDoT37rrZwYkuWnKQ3KCt1BHoe0EMGN-BuVeT44VRlwJvmg9XngLnD5PsSNUKzHmgGf_xF4krvIKSLyUA',
+                rating: 4.9,
+                num_reviews: 48,
+                count_in_stock: 24
+            },
+            {
                 name: 'Suede Chelsea Boots',
                 description: 'Classic Chelsea boot profile crafted in Spain from premium calf suede. Features elastic side gussets and pull tabs.',
                 price: 320.00,
@@ -219,6 +229,70 @@ const initializeDatabase = async () => {
             );
         }
         console.log('Default products seeded.');
+    }
+
+    // Seed sample executed orders if none exist
+    const orderCount = await dbGet('SELECT COUNT(*) as count FROM orders');
+    if (orderCount.count === 0) {
+        console.log('Seeding sample executed orders...');
+        const customer = await dbGet('SELECT id FROM users WHERE email = ?', ['customer@luxe.com']);
+        if (customer) {
+            const classicLeatherTote = await dbGet('SELECT id, price FROM products WHERE name = ?', ['Classic Leather Tote']);
+            const minimalistSneaker = await dbGet('SELECT id, price FROM products WHERE name = ?', ['Minimalist Sneaker']);
+            const leatherCardholder = await dbGet('SELECT id, price FROM products WHERE name = ?', ['Leather Cardholder']);
+            const silkCashmereScarf = await dbGet('SELECT id, price FROM products WHERE name = ?', ['Silk Cashmere Scarf']);
+
+            const sampleOrders = [
+                {
+                    shipping_address: '123 Palm Avenue, Mumbai, India',
+                    payment_method: 'Credit Card',
+                    status: 'delivered',
+                    items: [
+                        { product: classicLeatherTote, quantity: 1 },
+                        { product: minimalistSneaker, quantity: 1 }
+                    ]
+                },
+                {
+                    shipping_address: 'A-56 Premium Boulevard, Delhi, India',
+                    payment_method: 'UPI',
+                    status: 'shipped',
+                    items: [
+                        { product: silkCashmereScarf, quantity: 2 }
+                    ]
+                },
+                {
+                    shipping_address: 'Suite 701, Prestige Tower, Bengaluru, India',
+                    payment_method: 'Cash on Delivery',
+                    status: 'processing',
+                    items: [
+                        { product: leatherCardholder, quantity: 1 },
+                        { product: minimalistSneaker, quantity: 2 }
+                    ]
+                }
+            ];
+
+            for (const order of sampleOrders) {
+                const totalAmount = order.items.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
+                const orderResult = await dbRun(
+                    'INSERT INTO orders (user_id, shipping_address, payment_method, total_amount, status) VALUES (?, ?, ?, ?, ?)',
+                    [customer.id, order.shipping_address, order.payment_method, totalAmount, order.status]
+                );
+                const orderId = orderResult.lastID;
+
+                for (const item of order.items) {
+                    if (!item.product) continue;
+                    await dbRun(
+                        'INSERT INTO order_items (order_id, product_id, quantity, price) VALUES (?, ?, ?, ?)',
+                        [orderId, item.product.id, item.quantity, item.product.price]
+                    );
+                    await dbRun(
+                        'UPDATE products SET stock = stock - ? WHERE id = ?',
+                        [item.quantity, item.product.id]
+                    );
+                }
+            }
+            console.log('Sample executed orders seeded.');
+        }
     }
 };
 
