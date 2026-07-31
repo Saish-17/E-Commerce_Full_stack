@@ -26,7 +26,7 @@ A polished e-commerce demo built with Node.js, Express, and SQLite.
 ### Setup
 
 ```bash
-cd CodeAlphaTask1
+cd E-COmmerce_full_stack
 npm install
 copy .env.example .env
 ```
@@ -66,7 +66,7 @@ http://localhost:5000
 ## Repository Structure
 
 ```text
-CodeAlphaTask1/
+E-Commerce_full_stack/
 ├── data/                  # SQLite database files
 ├── middleware/            # Auth and request middleware
 ├── public/                # Frontend pages and assets
